@@ -1377,6 +1377,7 @@
     <ClInclude Include="..\..\JuceLibraryCode\JuceHeader.h"/>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\Source\ACC\juce_module_info"/>
     <None Include="..\..\Source\original\zcommon.acs"/>
     <None Include="..\..\Source\original\zdefs.acs"/>
     <None Include="..\..\Source\original\zspecial.acs"/>

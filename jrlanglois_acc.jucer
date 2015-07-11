@@ -6,6 +6,8 @@
               companyWebsite="www.jrlanglois.com" companyName="Jo&#235;l R. Langlois">
   <MAINGROUP id="iYWOgq" name="jrlanglois_acc">
     <GROUP id="{FF191AC5-CBD3-92E4-D92A-2299B3465EB7}" name="ACC">
+      <FILE id="BnMZpX" name="juce_module_info" compile="0" resource="0"
+            file="Source/ACC/juce_module_info"/>
       <FILE id="wPM2oh" name="ACCModule.cpp" compile="1" resource="0" file="Source/ACC/ACCModule.cpp"/>
       <FILE id="HmEb5c" name="ACCModule.h" compile="0" resource="0" file="Source/ACC/ACCModule.h"/>
       <GROUP id="{6960AC71-A9FA-722C-A93C-C51747AFE384}" name="core">

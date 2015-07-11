@@ -2267,6 +2267,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\Source\ACC\juce_module_info">
+      <Filter>jrlanglois_acc\ACC</Filter>
+    </None>
     <None Include="..\..\Source\original\zcommon.acs">
       <Filter>jrlanglois_acc\original</Filter>
     </None>

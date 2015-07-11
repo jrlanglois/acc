@@ -1,0 +1,29 @@
+{
+    "id":               "jrl_ACC",
+    "name":             "jrl_ACC",
+    "version":          "1.0.0",
+    "description":      "The essential set of a ZDoom & Hexen ACC script compiler using JUCE",
+    "website":          "https://github.com/jrlanglois/jrl_acc",
+    "license":          "ISC Permissive",
+
+    "dependencies":     [
+                            { "id": "juce_gui_core", "version": "3.1.1" },
+                            { "id": "juce_gui_cryptography", "version": "3.1.1" },
+                            { "id": "juce_gui_data_structures", "version": "3.1.1" },
+                            { "id": "juce_gui_events", "version": "3.1.1" },
+                            { "id": "juce_gui_basics", "version": "3.1.1" },
+                            { "id": "juce_gui_extra", "version": "3.1.1" }
+                        ],
+
+    "include":          "ACCModule.h",
+
+    "compile":          [
+                            { "file": "ACCModule.cpp", "target": "! xcode" },
+                            { "file": "ACCModule.cpp", "target": "xcode" }
+                        ],
+
+    "browse":           [
+                            "core/*",
+                            "graphics/*"
+                        ]
+}

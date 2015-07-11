@@ -126,6 +126,7 @@
   <Files>
     <Filter Name="jrlanglois_acc">
       <Filter Name="ACC">
+        <File RelativePath="..\..\Source\ACC\juce_module_info"/>
         <File RelativePath="..\..\Source\ACC\ACCModule.cpp"/>
         <File RelativePath="..\..\Source\ACC\ACCModule.h"/>
         <Filter Name="core">
