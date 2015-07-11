@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="mfptWF" name="jrlanglois_acc" projectType="guiapp" version="1.0.0"
+              bundleIdentifier="com.jrlanglois.acc" includeBinaryInAppConfig="0"
+              jucerVersion="3.1.1" companyEmail="joel.r.langlois@gmail.com"
+              companyWebsite="www.jrlanglois.com" companyName="Jo&#235;l R. Langlois">
+  <MAINGROUP id="iYWOgq" name="jrlanglois_acc">
+    <GROUP id="{FF191AC5-CBD3-92E4-D92A-2299B3465EB7}" name="ACC">
+      <FILE id="wPM2oh" name="ACCModule.cpp" compile="1" resource="0" file="Source/ACC/ACCModule.cpp"/>
+      <FILE id="HmEb5c" name="ACCModule.h" compile="0" resource="0" file="Source/ACC/ACCModule.h"/>
+      <GROUP id="{6960AC71-A9FA-722C-A93C-C51747AFE384}" name="core">
+        <FILE id="xXUVjx" name="ACCCodeTokeniser.cpp" compile="0" resource="0"
+              file="Source/ACC/core/ACCCodeTokeniser.cpp"/>
+        <FILE id="XNRXez" name="ACCCodeTokeniser.h" compile="0" resource="0"
+              file="Source/ACC/core/ACCCodeTokeniser.h"/>
+        <FILE id="AVB2Tf" name="Script.cpp" compile="0" resource="0" file="Source/ACC/core/Script.cpp"/>
+        <FILE id="yeYLMe" name="Script.h" compile="0" resource="0" file="Source/ACC/core/Script.h"/>
+        <FILE id="NvlagW" name="ScriptParser.cpp" compile="0" resource="0"
+              file="Source/ACC/core/ScriptParser.cpp"/>
+        <FILE id="cnPEVC" name="ScriptParser.h" compile="0" resource="0" file="Source/ACC/core/ScriptParser.h"/>
+      </GROUP>
+      <GROUP id="{C0D89FA8-3525-0059-F152-8B36511CE051}" name="graphics">
+        <FILE id="yOlkH2" name="ACCCodeEditor.cpp" compile="0" resource="0"
+              file="Source/ACC/graphics/ACCCodeEditor.cpp"/>
+        <FILE id="QyLiKX" name="ACCCodeEditor.h" compile="0" resource="0" file="Source/ACC/graphics/ACCCodeEditor.h"/>
+        <FILE id="hap2E6" name="ACCMainComponent.cpp" compile="0" resource="0"
+              file="Source/ACC/graphics/ACCMainComponent.cpp"/>
+        <FILE id="CGyOnV" name="ACCMainComponent.h" compile="0" resource="0"
+              file="Source/ACC/graphics/ACCMainComponent.h"/>
+        <FILE id="XikgOd" name="ACCWindow.cpp" compile="0" resource="0" file="Source/ACC/graphics/ACCWindow.cpp"/>
+        <FILE id="KI73Ni" name="ACCWindow.h" compile="0" resource="0" file="Source/ACC/graphics/ACCWindow.h"/>
+      </GROUP>
+    </GROUP>
+    <GROUP id="{95C766BF-8A8C-18A8-16E3-1068F4981A45}" name="Main">
+      <FILE id="kdlDWM" name="Main.cpp" compile="1" resource="0" file="Source/Main/Main.cpp"/>
+    </GROUP>
+    <GROUP id="{F0B99A2A-8BA0-C64A-22FB-979619708D0B}" name="original">
+      <FILE id="S6rz42" name="acc.c" compile="0" resource="0" file="Source/original/acc.c"/>
+      <FILE id="onsTmU" name="common.h" compile="0" resource="0" file="Source/original/common.h"/>
+      <FILE id="Gw7onI" name="error.c" compile="0" resource="0" file="Source/original/error.c"/>
+      <FILE id="I69IQV" name="error.h" compile="0" resource="0" file="Source/original/error.h"/>
+      <FILE id="Tl2tdN" name="misc.c" compile="0" resource="0" file="Source/original/misc.c"/>
+      <FILE id="U61xwV" name="misc.h" compile="0" resource="0" file="Source/original/misc.h"/>
+      <FILE id="n7gKFW" name="parse.c" compile="0" resource="0" file="Source/original/parse.c"/>
+      <FILE id="FqzbsN" name="parse.h" compile="0" resource="0" file="Source/original/parse.h"/>
+      <FILE id="dODVvn" name="pcode.c" compile="0" resource="0" file="Source/original/pcode.c"/>
+      <FILE id="zScMgh" name="pcode.h" compile="0" resource="0" file="Source/original/pcode.h"/>
+      <FILE id="Yii8ME" name="strlist.c" compile="0" resource="0" file="Source/original/strlist.c"/>
+      <FILE id="x7uZd6" name="strlist.h" compile="0" resource="0" file="Source/original/strlist.h"/>
+      <FILE id="yOjSa1" name="symbol.c" compile="0" resource="0" file="Source/original/symbol.c"/>
+      <FILE id="K2uG64" name="symbol.h" compile="0" resource="0" file="Source/original/symbol.h"/>
+      <FILE id="Q3wCBr" name="token.c" compile="0" resource="0" file="Source/original/token.c"/>
+      <FILE id="BlsfNd" name="token.h" compile="0" resource="0" file="Source/original/token.h"/>
+      <FILE id="fGXj9R" name="zcommon.acs" compile="0" resource="0" file="Source/original/zcommon.acs"/>
+      <FILE id="Em35Dt" name="zdefs.acs" compile="0" resource="0" file="Source/original/zdefs.acs"/>
+      <FILE id="Rtnfxu" name="zspecial.acs" compile="0" resource="0" file="Source/original/zspecial.acs"/>
+      <FILE id="s8MqEA" name="zwvars.acs" compile="0" resource="0" file="Source/original/zwvars.acs"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
+                       isDebug="1" optimisation="1" targetName="jrlanglois_acc"/>
+        <CONFIGURATION name="Release" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
+                       isDebug="0" optimisation="3" targetName="jrlanglois_acc"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+    <VS2015 targetFolder="Builds/VisualStudio2015">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="jrlanglois_acc"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="0" optimisation="3" targetName="jrlanglois_acc"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2015>
+    <VS2013 targetFolder="Builds/VisualStudio2013">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="jrlanglois_acc"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="0" optimisation="3" targetName="jrlanglois_acc"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2013>
+    <VS2012 targetFolder="Builds/VisualStudio2012">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="jrlanglois_acc"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="0" optimisation="3" targetName="jrlanglois_acc"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2012>
+    <VS2010 targetFolder="Builds/VisualStudio2010">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="jrlanglois_acc"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="0" optimisation="3" targetName="jrlanglois_acc"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2010>
+    <VS2008 targetFolder="Builds/VisualStudio2008">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" isDebug="1"
+                       optimisation="1" targetName="jrlanglois_acc"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" isDebug="0"
+                       optimisation="3" targetName="jrlanglois_acc"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2008>
+    <VS2005 targetFolder="Builds/VisualStudio2005">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" isDebug="1"
+                       optimisation="1" targetName="jrlanglois_acc"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" isDebug="0"
+                       optimisation="3" targetName="jrlanglois_acc"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2005>
+    <LINUX_MAKE targetFolder="Builds/LinuxMakefile">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" libraryPath="/usr/X11R6/lib/" isDebug="1" optimisation="1"
+                       targetName="jrlanglois_acc"/>
+        <CONFIGURATION name="Release" libraryPath="/usr/X11R6/lib/" isDebug="0" optimisation="3"
+                       targetName="jrlanglois_acc"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
+      </MODULEPATHS>
+    </LINUX_MAKE>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULES id="juce_core" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_cryptography" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_data_structures" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_events" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_graphics" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_gui_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_FORCE_DEBUG="disabled" JUCE_LOG_ASSERTIONS="disabled" JUCE_CHECK_MEMORY_LEAKS="enabled"
+               JUCE_INCLUDE_ZLIB_CODE="enabled"/>
+</JUCERPROJECT>
