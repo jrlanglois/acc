@@ -1200,6 +1200,9 @@
     <ClInclude Include="..\..\Source\ACC\core\ScriptParser.h">
       <Filter>jrlanglois_acc\ACC\core</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\ACC\graphics\ACCApplicationCommands.h">
+      <Filter>jrlanglois_acc\ACC\graphics</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\ACC\graphics\ACCCodeEditor.h">
       <Filter>jrlanglois_acc\ACC\graphics</Filter>
     </ClInclude>

@@ -577,6 +577,7 @@
 		CB35F293F6020C4AF2DD1FE3 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_RectanglePlacement.cpp"; path = "../../../JUCE/modules/juce_graphics/placement/juce_RectanglePlacement.cpp"; sourceTree = "SOURCE_ROOT"; };
 		CB6C12E2A657A3B98C36D2AF = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_FileLogger.cpp"; path = "../../../JUCE/modules/juce_core/logging/juce_FileLogger.cpp"; sourceTree = "SOURCE_ROOT"; };
 		CBD759A1801641E11A020CF2 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "juce_SliderPropertyComponent.h"; path = "../../../JUCE/modules/juce_gui_basics/properties/juce_SliderPropertyComponent.h"; sourceTree = "SOURCE_ROOT"; };
+		CCD33A6F3EB04DE48017889E = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ACCApplicationCommands.h; path = ../../Source/ACC/graphics/ACCApplicationCommands.h; sourceTree = "SOURCE_ROOT"; };
 		CD5EBAA3D97BFCBAD84FD60D = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_LowLevelGraphicsSoftwareRenderer.cpp"; path = "../../../JUCE/modules/juce_graphics/contexts/juce_LowLevelGraphicsSoftwareRenderer.cpp"; sourceTree = "SOURCE_ROOT"; };
 		CDDAF634A52C8EB8F6A99C8C = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_ApplicationProperties.cpp"; path = "../../../JUCE/modules/juce_data_structures/app_properties/juce_ApplicationProperties.cpp"; sourceTree = "SOURCE_ROOT"; };
 		CE5F43C098B8ACB68D681D4C = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "juce_LiveConstantEditor.h"; path = "../../../JUCE/modules/juce_gui_extra/misc/juce_LiveConstantEditor.h"; sourceTree = "SOURCE_ROOT"; };
@@ -733,6 +734,7 @@
 					9FBCD21EAF2C5C0FBFF932CA,
 					176F7AE2FE13C7B5FD252118, ); name = core; sourceTree = "<group>"; };
 		6CEBE8BFF13C38C6E351C612 = {isa = PBXGroup; children = (
+					CCD33A6F3EB04DE48017889E,
 					6AD68617C4353DEE0A99C4DA,
 					5CDFC647560F1C18E89B40F6,
 					6FA1BDD167EEF388F32E98E5,

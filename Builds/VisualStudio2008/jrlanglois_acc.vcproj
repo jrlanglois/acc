@@ -165,6 +165,7 @@
           <File RelativePath="..\..\Source\ACC\core\ScriptParser.h"/>
         </Filter>
         <Filter Name="graphics">
+          <File RelativePath="..\..\Source\ACC\graphics\ACCApplicationCommands.h"/>
           <File RelativePath="..\..\Source\ACC\graphics\ACCCodeEditor.cpp">
             <FileConfiguration Name="Debug|Win32"
                                ExcludedFromBuild="true">

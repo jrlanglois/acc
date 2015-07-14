@@ -1020,6 +1020,7 @@
     <ClInclude Include="..\..\Source\ACC\core\ACCCodeTokeniser.h"/>
     <ClInclude Include="..\..\Source\ACC\core\Script.h"/>
     <ClInclude Include="..\..\Source\ACC\core\ScriptParser.h"/>
+    <ClInclude Include="..\..\Source\ACC\graphics\ACCApplicationCommands.h"/>
     <ClInclude Include="..\..\Source\ACC\graphics\ACCCodeEditor.h"/>
     <ClInclude Include="..\..\Source\ACC\graphics\ACCMainComponent.h"/>
     <ClInclude Include="..\..\Source\ACC\graphics\ACCWindow.h"/>

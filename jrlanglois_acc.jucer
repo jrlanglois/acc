@@ -22,6 +22,8 @@
         <FILE id="cnPEVC" name="ScriptParser.h" compile="0" resource="0" file="Source/ACC/core/ScriptParser.h"/>
       </GROUP>
       <GROUP id="{C0D89FA8-3525-0059-F152-8B36511CE051}" name="graphics">
+        <FILE id="oUCjqH" name="ACCApplicationCommands.h" compile="0" resource="0"
+              file="Source/ACC/graphics/ACCApplicationCommands.h"/>
         <FILE id="yOlkH2" name="ACCCodeEditor.cpp" compile="0" resource="0"
               file="Source/ACC/graphics/ACCCodeEditor.cpp"/>
         <FILE id="QyLiKX" name="ACCCodeEditor.h" compile="0" resource="0" file="Source/ACC/graphics/ACCCodeEditor.h"/>
@@ -77,7 +79,7 @@
         <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
-    <VS2015 targetFolder="Builds/VisualStudio2015">
+    <VS2015 targetFolder="Builds/VisualStudio2015" toolset="v140">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
                        isDebug="1" optimisation="1" targetName="jrlanglois_acc"/>
@@ -94,7 +96,7 @@
         <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
       </MODULEPATHS>
     </VS2015>
-    <VS2013 targetFolder="Builds/VisualStudio2013">
+    <VS2013 targetFolder="Builds/VisualStudio2013" toolset="v120">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
                        isDebug="1" optimisation="1" targetName="jrlanglois_acc"/>
@@ -111,7 +113,7 @@
         <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
       </MODULEPATHS>
     </VS2013>
-    <VS2012 targetFolder="Builds/VisualStudio2012">
+    <VS2012 targetFolder="Builds/VisualStudio2012" toolset="v110">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
                        isDebug="1" optimisation="1" targetName="jrlanglois_acc"/>
@@ -128,7 +130,7 @@
         <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
       </MODULEPATHS>
     </VS2012>
-    <VS2010 targetFolder="Builds/VisualStudio2010">
+    <VS2010 targetFolder="Builds/VisualStudio2010" toolset="v100">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
                        isDebug="1" optimisation="1" targetName="jrlanglois_acc"/>

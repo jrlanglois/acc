@@ -22,6 +22,7 @@ namespace acc
     #include "core/ACCCodeTokeniser.h"
     #include "core/Script.h"
     #include "core/ScriptParser.h"
+    #include "graphics/ACCApplicationCommands.h"
     #include "graphics/ACCCodeEditor.h"
     #include "graphics/ACCMainComponent.h"
     #include "graphics/ACCWindow.h"
