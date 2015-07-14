@@ -41,7 +41,12 @@ ACCMainComponent::ACCMainComponent() :
     addAndMakeVisible (&toolbar);
     addAndMakeVisible (codeEditorComponent);
 
-    setFile (File ("M:/Programming/jrl_acc/Source/UnitTests/AllTests.acs"));
+    String path = File::getSpecialLocation (File::currentApplicationFile)
+                        .getFullPathName()
+                        .upToFirstOccurrenceOf ("jrl_acc", true, true)
+                  + "/Source/UnitTests/AllTests.acs";
+
+    setFile (File (path));
 
     setSize (800, 600);
 }
