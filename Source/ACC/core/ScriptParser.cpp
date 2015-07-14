@@ -1,32 +1,16 @@
 //==============================================================================
 #define ACC_OPERATORS(X) \
     X(plus, "+")            X(minus, "-")           X(times, "*")               X(divide, "/") \
-    X(modulo, "%")          X(not, "~")             X(bitwiseAnd, "&")          X(bitwiseOr, "|") \
-    X(bitwiseXor, "^")      X(assign, "=")          X(plusplus, "++")           X(minusminus, "--") \
-    X(plusEquals, "+=")     X(minusEquals, "-=")    X(timesEquals, "*=")        X(divideEquals, "/=") \
-    X(moduloEquals, "%=")   X(xorEquals, "^=")      X(andEquals, "&=")          X(orEquals, "|=") \
-    X(equals, "==")         X(notEquals, "!=")      X(logicalAnd, "&&")         X(logicalOr, "||") \
-    X(lessThan, "<")        X(greaterThan, ">")     X(lessThanOrEqual, "<=")    X(greaterThanOrEqual, ">=") \
+    X(modulo, "%")          X(bitwiseAnd, "&")      X(bitwiseOr, "|")           X(bitwiseXor, "^") \
+    X(assign, "=")          X(plusplus, "++")       X(minusminus, "--")         X(plusEquals, "+=") \
+    X(minusEquals, "-=")    X(timesEquals, "*=")    X(divideEquals, "/=")       X(moduloEquals, "%=") \
+    X(xorEquals, "^=")      X(andEquals, "&=")      X(orEquals, "|=")           X(equals, "==") \
+    X(notEquals, "!=")      X(logicalAnd, "&&")     X(logicalOr, "||") \
+    X(lessThan, "<")        X(greaterThan, ">")     X(lessThanOrEqual, "<=")    X(greaterThanOrEqual, ">=")\
     X(leftShift, "<<")      X(rightShift, ">>")     X(leftShiftEquals, "<<=")   X(rightShiftEquals, ">>=") \
     X(semicolon, ";")       X(dot, ".")             X(comma, ",") \
     X(openParen, "(")       X(closeParen, ")")      X(openBrace, "{")           X(closeBrace, "}") \
-    X(openBracket, "[")     X(closeBracket, "]")    X(colon, ":")               X(question,   "?") \
-
-/*
-    X(semicolon,     ";")        X(dot,          ".")       X(comma,        ",") \
-    X(openParen,     "(")        X(closeParen,   ")")       X(openBrace,    "{")    X(closeBrace, "}") \
-    X(openBracket,   "[")        X(closeBracket, "]")       X(colon,        ":")    X(question,   "?") \
-    X(typeEquals,    "===")      X(equals,       "==")      X(assign,       "=") \
-    X(typeNotEquals, "!==")      X(notEquals,    "!=")      X(logicalNot,   "!") \
-    X(plusEquals,    "+=")       
-    X(minusEquals,   "-=") \
-    X(timesEquals,   "*=")       X(times,        "*")       X(divideEquals, "/=")   X(divide,     "/") \
-    X(moduloEquals,  "%=")       X(modulo,       "%")       X(xorEquals,    "^=")   X(bitwiseXor, "^") \
-    X(andEquals,     "&=")       X(logicalAnd,   "&&")      X(bitwiseAnd,   "&") \
-    X(orEquals,      "|=")       X(logicalOr,    "||")      X(bitwiseOr,    "|") \
-    X(leftShiftEquals,    "<<=") X(lessThanOrEqual,  "<=")  X(leftShift,    "<<")   X(lessThan,   "<") \
-    X(rightShiftUnsigned, ">>>") X(rightShiftEquals, ">>=") X(rightShift,   ">>")   X(greaterThanOrEqual, ">=")  X(greaterThan,  ">")
-*/
+    X(openBracket, "[")     X(closeBracket, "]")    X(colon, ":")               X(question, "?")
 
 #define ACC_KEYWORDS(X) \
     X(acs_executewait) \
@@ -85,6 +69,7 @@
 	X(goto) \
 	X(if) \
 	X(int) \
+	X(not) \
 	X(return) \
 	X(static) \
 	X(strcpy) \
