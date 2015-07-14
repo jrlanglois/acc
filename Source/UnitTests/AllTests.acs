@@ -1,0 +1,120 @@
+/** jrlanglois_acc
+
+	https://github.com/jrlanglois/jrl_acc
+
+	Unit Test: All Tests
+
+	In this file, all unit tests are included and set up
+	to fully check the compiler.
+*/
+
+//Standard Script Types
+
+script 1 ENTER
+{
+	Thing_ChangeTID(0, 1000);
+	Thing_ChangeTID(0, 1000 + PlayerNumber());
+}
+
+script "ACSNamedScriptTests" ENTER
+{
+	ACS_NamedExecute(); //todo
+	ACS_NamedSuspend(); //todo
+	ACS_NamedTerminate(); //todo
+	ACS_NamedLockedExecute(); //todo
+	ACS_NamedLockedExecuteDoor(); //todo
+	ACS_NamedExecuteWithResult(); //todo
+	ACS_NamedExecuteAlways(); //todo
+}
+
+script "ACSWaitingTests" ENTER
+{
+	ACS_ExecuteWait(); //todo
+	ACS_NamedExecuteWait(); //todo
+	Delay(); //todo
+	NamedScriptWait(); //todo
+	PolyWait(); //todo
+	ScriptWait(); //todo
+	TagWait(); //todo
+}
+
+script "ACSMathTests" ENTER
+{
+	sin(); //todo
+	cos(); //todo
+	FixedDiv(); //todo
+	FixedMul(); //todo
+	FixedSqrt(); //todo
+	Random(); //todo
+	Sqrt(); //todo
+	StrLen(); //todo
+	VectorAngle(); //todo
+	VectorLength(); //todo
+}
+
+//http://zdoom.org/wiki/Built-in_ACS_functions
+
+/** ENTER script which can also be puked manually in multiplayer */
+script 109 ENTER net
+{
+}
+
+script 1 RETURN
+{
+	If(GetActorProperty(0, APROP_HEALTH) < 75)
+	{
+		SetActorProperty(0, APROP_HEALTH, 75);
+	}
+}
+
+script 1 RESPAWN
+{
+	SetActorProperty(0, APROP_SPEED, 0.5);
+}
+
+/** Drop the Golden Idol, if the dying player has it. */
+script 1 DEATH
+{
+       if (CheckInventory("GoldenIdolOfImportance") {
+            Thing_Spawn(1337+PlayerNumber(), T_MYGOLDENIDOL, 0, 0);
+       }
+}
+
+script 1 LIGHTNING
+{
+	Delay(Random(20, 200));
+	AmbientSound("world/thunder", 127);
+}
+
+script 1 UNLOADING
+{
+	Thing_Spawn(10, T_SOULSPHERE, 0, 0);
+}
+
+script 999 (int gone) DISCONNECT
+{
+	PrintBold(s:"Player ", n:gone + 1, s:" has left the building!");
+}
+
+/** Closed script which can be puked in multiplayer */
+script 7 (int x) net
+{
+}
+
+
+//SkullTag Script Types
+/** ENTER script which can also be puked manually in multiplayer */
+script 1 PICKUP
+{
+}
+script 1 BLUERETURN
+{
+}
+
+script 1 REDRETURN 
+{
+}
+
+script 1 WHITERETURN
+{
+}

@@ -41,7 +41,7 @@ ACCMainComponent::ACCMainComponent() :
     addAndMakeVisible (&toolbar);
     addAndMakeVisible (codeEditorComponent);
 
-    setFile (File ("M:/Programming/jrl_acc/Source/original/zcommon.acs"));
+    setFile (File ("M:/Programming/jrl_acc/Source/UnitTests/AllTests.acs"));
 
     setSize (800, 600);
 }
