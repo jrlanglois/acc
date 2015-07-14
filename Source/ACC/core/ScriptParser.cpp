@@ -141,7 +141,7 @@ ScriptParser::ScriptParser()
 
 Result ScriptParser::isACCSourceFile (const File& potentialACCSourceFile)
 {
-    if (! potentialACCSourceFile.hasFileExtension (".acc"))
+    if (! potentialACCSourceFile.hasFileExtension (".acs"))
         return Result::fail (TRANS ("The file given is not an ACC script!"));
 
     return Result::ok();
