@@ -37,6 +37,8 @@ ACCMainComponent::ACCMainComponent() :
 {
     codeEditorComponent = new ACCCodeEditorComponent (codeDocument);
 
+    menuBarComponent.setModel (this);
+
     addAndMakeVisible (&menuBarComponent);
     addAndMakeVisible (&toolbar);
     addAndMakeVisible (codeEditorComponent);
@@ -67,14 +69,15 @@ void ACCMainComponent::resized()
 {
     enum
     {
-        barHeight = 32,
-        codeEditorOffset = barHeight * 2
+        menuBarHeight = 24,
+        toolBarHeight = 32,
+        codeEditorOffset = menuBarHeight + toolBarHeight
     };
 
     const int w = getWidth();
 
-    menuBarComponent.setBounds (0, 0, w, barHeight);
-    toolbar.setBounds (0, barHeight, w, barHeight);
+    menuBarComponent.setBounds (0, 0, w, menuBarHeight);
+    toolbar.setBounds (0, menuBarHeight, w, toolBarHeight);
 
     if (codeEditorComponent != nullptr)
         codeEditorComponent->setBounds (0, codeEditorOffset, w, getHeight() - codeEditorOffset);
@@ -85,12 +88,10 @@ StringArray ACCMainComponent::getMenuBarNames()
 {
     StringArray names;
 
-    names.add (TRANS ("File"));
-    names.add (TRANS ("Edit"));
-    names.add (TRANS ("View"));
-    names.add (TRANS ("Build"));
-    names.add (TRANS ("Tools"));
-    names.add (TRANS ("Help"));
+    const OwnedArray<MenuBarItem>& items = MenuBarItem::getMenuBarItems();
+
+    for (int i = 0; i < items.size(); ++i)
+        names.add (items.getUnchecked (i)->getName());
 
     return names;
 }
@@ -98,49 +99,37 @@ StringArray ACCMainComponent::getMenuBarNames()
 PopupMenu ACCMainComponent::getMenuForIndex (const int topLevelMenuIndex,
                                              const String& menuName)
 {
-    PopupMenu popupMenu;
+    const OwnedArray<MenuBarItem>& items = MenuBarItem::getMenuBarItems();
 
-    if (menuName == TRANS ("File"))
-    {
+    for (int i = 0; i < items.size(); ++i)
+        if (i == topLevelMenuIndex)
+            return items.getUnchecked (i)->createPopupMenu();
 
-    }
-    else if (menuName == TRANS ("Edit"))
-    {
-
-    }
-    else if (menuName == TRANS ("View"))
-    {
-
-    }
-    else if (menuName == TRANS ("Build"))
-    {
-
-    }
-    else if (menuName == TRANS ("Tools"))
-    {
-
-    }
-    else if (menuName == TRANS ("Help"))
-    {
-
-    }
-
-    return popupMenu;
+    jassertfalse; //Messed up index or missing item!
+    return PopupMenu();
 }
 
 void ACCMainComponent::menuItemSelected (const int menuItemID,
                                          const int topLevelMenuIndex)
 {
+    const OwnedArray<MenuBarItem>& items = MenuBarItem::getMenuBarItems();
 
+    for (int i = 0; i < items.size(); ++i)
+    {
+        if (i == topLevelMenuIndex)
+        {
+            items.getUnchecked (i)->handleMenuResult (menuItemID);
+            break;
+        }
+    }
 }
 
-void ACCMainComponent::menuBarItemsChanged (MenuBarModel* const menuBarModel)
+void ACCMainComponent::menuBarItemsChanged (MenuBarModel* const)
 {
 
 }
 
-void ACCMainComponent::menuCommandInvoked (MenuBarModel* const menuBarModel,
-                                           const ApplicationCommandTarget::InvocationInfo& info)
+void ACCMainComponent::menuCommandInvoked (MenuBarModel* const, const ApplicationCommandTarget::InvocationInfo& info)
 {
 
 }

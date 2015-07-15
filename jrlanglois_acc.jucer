@@ -31,6 +31,10 @@
               file="Source/ACC/graphics/ACCMainComponent.cpp"/>
         <FILE id="CGyOnV" name="ACCMainComponent.h" compile="0" resource="0"
               file="Source/ACC/graphics/ACCMainComponent.h"/>
+        <FILE id="UzSTgy" name="ACCMenuBarItems.cpp" compile="0" resource="0"
+              file="Source/ACC/graphics/ACCMenuBarItems.cpp"/>
+        <FILE id="sLdHZF" name="ACCMenuBarItems.h" compile="0" resource="0"
+              file="Source/ACC/graphics/ACCMenuBarItems.h"/>
         <FILE id="XikgOd" name="ACCWindow.cpp" compile="0" resource="0" file="Source/ACC/graphics/ACCWindow.cpp"/>
         <FILE id="KI73Ni" name="ACCWindow.h" compile="0" resource="0" file="Source/ACC/graphics/ACCWindow.h"/>
       </GROUP>

@@ -145,6 +145,9 @@
     <ClCompile Include="..\..\Source\ACC\graphics\ACCMainComponent.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\Source\ACC\graphics\ACCMenuBarItems.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ACC\graphics\ACCWindow.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
@@ -1023,6 +1026,7 @@
     <ClInclude Include="..\..\Source\ACC\graphics\ACCApplicationCommands.h"/>
     <ClInclude Include="..\..\Source\ACC\graphics\ACCCodeEditor.h"/>
     <ClInclude Include="..\..\Source\ACC\graphics\ACCMainComponent.h"/>
+    <ClInclude Include="..\..\Source\ACC\graphics\ACCMenuBarItems.h"/>
     <ClInclude Include="..\..\Source\ACC\graphics\ACCWindow.h"/>
     <ClInclude Include="..\..\Source\original\common.h"/>
     <ClInclude Include="..\..\Source\original\error.h"/>
