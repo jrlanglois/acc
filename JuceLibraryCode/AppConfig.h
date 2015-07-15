@@ -58,22 +58,26 @@
  #define   JUCE_INCLUDE_ZLIB_CODE 1
 #endif
 
+#ifndef    JUCE_USE_CURL
+ #define   JUCE_USE_CURL 0
+#endif
+
 //==============================================================================
 // juce_graphics flags:
 
 #ifndef    JUCE_USE_COREIMAGE_LOADER
- //#define JUCE_USE_COREIMAGE_LOADER
+ #define   JUCE_USE_COREIMAGE_LOADER 0
 #endif
 
 #ifndef    JUCE_USE_DIRECTWRITE
- //#define JUCE_USE_DIRECTWRITE
+ #define   JUCE_USE_DIRECTWRITE 0
 #endif
 
 //==============================================================================
 // juce_gui_basics flags:
 
 #ifndef    JUCE_ENABLE_REPAINT_DEBUGGING
- //#define JUCE_ENABLE_REPAINT_DEBUGGING
+ #define   JUCE_ENABLE_REPAINT_DEBUGGING 0
 #endif
 
 #ifndef    JUCE_USE_XSHM
@@ -92,11 +96,11 @@
 // juce_gui_extra flags:
 
 #ifndef    JUCE_WEB_BROWSER
- //#define JUCE_WEB_BROWSER
+ #define   JUCE_WEB_BROWSER 0
 #endif
 
 #ifndef    JUCE_ENABLE_LIVE_CONSTANT_EDITOR
- //#define JUCE_ENABLE_LIVE_CONSTANT_EDITOR
+ #define   JUCE_ENABLE_LIVE_CONSTANT_EDITOR 0
 #endif
 
 
