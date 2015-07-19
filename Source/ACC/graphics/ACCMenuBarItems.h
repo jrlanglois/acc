@@ -21,14 +21,12 @@ protected:
         where the ids start at offset 1.
 
         @note Items must be untranslated!
-              An item who is a '-' (dash) represents a separator.
+              An item who is a '-' (hyphen) represents a separator.
     */
     static PopupMenu createPopupMenuWithItems (const StringArray& items);
 
 private:
     const String name; //Note: this string is to be untranslated!
-
-    static void createDefaultMenuBarItems();
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MenuBarItem)
 };

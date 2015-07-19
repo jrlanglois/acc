@@ -1,5 +1,22 @@
 //==============================================================================
-static OwnedArray<MenuBarItem> menuBarItems;
+class DefaultMenuBarItemHandler : public DeletedAtShutdown
+{
+public:
+    DefaultMenuBarItemHandler()
+    {
+    }
+
+    void setupDefaultItemsIfNecessary();
+
+    OwnedArray<MenuBarItem> menuBarItems;
+
+    juce_DeclareSingleton_SingleThreaded_Minimal (DefaultMenuBarItemHandler, true)
+
+private:
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DefaultMenuBarItemHandler)
+};
+
+juce_ImplementSingleton_SingleThreaded (DefaultMenuBarItemHandler)
 
 //==============================================================================
 MenuBarItem::MenuBarItem (const String& untranslatedName) :
@@ -13,10 +30,11 @@ MenuBarItem::~MenuBarItem()
 
 const OwnedArray<MenuBarItem>& MenuBarItem::getMenuBarItems()
 {
-    if (menuBarItems.size() <= 0)
-        createDefaultMenuBarItems();
+    DefaultMenuBarItemHandler* handler = DefaultMenuBarItemHandler::getInstance();
 
-    return menuBarItems;
+    handler->setupDefaultItemsIfNecessary();
+
+    return handler->menuBarItems;
 }
 
 PopupMenu MenuBarItem::createPopupMenuWithItems (const StringArray& items)
@@ -229,12 +247,15 @@ void HelpMenuBarItem::handleMenuResult (const int id)
 }
 
 //==============================================================================
-void MenuBarItem::createDefaultMenuBarItems()
+void DefaultMenuBarItemHandler::setupDefaultItemsIfNecessary()
 {
-    menuBarItems.add (new FileMenuBarItem());
-    menuBarItems.add (new EditMenuBarItem());
-    menuBarItems.add (new ViewMenuBarItem());
-    menuBarItems.add (new BuildMenuBarItem());
-    menuBarItems.add (new ToolsMenuBarItem());
-    menuBarItems.add (new HelpMenuBarItem());
+    if (menuBarItems.size() <= 0)
+    {
+        menuBarItems.add (new FileMenuBarItem());
+        menuBarItems.add (new EditMenuBarItem());
+        menuBarItems.add (new ViewMenuBarItem());
+        menuBarItems.add (new BuildMenuBarItem());
+        menuBarItems.add (new ToolsMenuBarItem());
+        menuBarItems.add (new HelpMenuBarItem());
+    }
 }
