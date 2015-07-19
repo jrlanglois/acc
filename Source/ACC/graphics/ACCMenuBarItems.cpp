@@ -175,13 +175,11 @@ PopupMenu ToolsMenuBarItem::createPopupMenu()
 {
     static const char* const items[] =
     {
-        NEEDS_TRANS("Undo"),
-        NEEDS_TRANS("Redo"),
+        NEEDS_TRANS("Convert Tabs to Spaces"),
+        NEEDS_TRANS("Trim Whitespace"),
         "-",
-        NEEDS_TRANS("Cut"),
-        NEEDS_TRANS("Copy"),
-        NEEDS_TRANS("Paste"),
-        NEEDS_TRANS("Delete"),
+        NEEDS_TRANS("Change Theme"),
+        NEEDS_TRANS("Edit Current Theme"),
         "-",
         NEEDS_TRANS("Options"),
         nullptr
