@@ -69,17 +69,17 @@ CodeEditorComponent::ColourScheme ACCCodeTokeniser::getDefaultColourScheme()
 {
     const CodeEditorComponent::ColourScheme::TokenType tokenTypes[] =
     {
-        { "Error",              Colour (0xffcc0000) },
-        { "Comment",            Colour (0xff00aa00) },
-        { "Keyword",            Colour (0xff0000cc) },
-        { "Operator",           Colour (0xff225500) },
-        { "Identifier",         Colour (0xff000000) },
-        { "Integer",            Colour (0xff880000) },
-        { "Float",              Colour (0xff885500) },
-        { "String",             Colour (0xff990099) },
-        { "Bracket",            Colour (0xff000055) },
-        { "Punctuation",        Colour (0xff004400) },
-        { "Preprocessor Text",  Colour (0xff660000) }
+        { "Error",              Colour (163, 21, 21) },
+        { "Comment",            Colours::green },
+        { "Keyword",            Colours::blue },
+        { "Operator",           Colours::black },
+        { "Identifier",         Colours::black },
+        { "Integer",            Colours::black },
+        { "Float",              Colours::black },
+        { "String",             Colour (163, 21, 21) },
+        { "Bracket",            Colours::black },
+        { "Punctuation",        Colours::black },
+        { "Preprocessor Text",  Colours::black }
     };
 
     Array<CodeEditorComponent::ColourScheme::TokenType> types (tokenTypes, numElementsInArray (tokenTypes));
