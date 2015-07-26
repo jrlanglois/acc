@@ -32,7 +32,6 @@ private:
     JUCE_DECLARE_NON_COPYABLE (CommandLine)
 };
 
-
 //==============================================================================
 class ACCApplication : public JUCEApplication
 {
@@ -49,6 +48,7 @@ public:
 
     void shutdown() override
     {
+        window = nullptr;
     }
 
     //==============================================================================
@@ -71,8 +71,17 @@ public:
     {
     }
 
+    //==============================================================================
+    void unhandledException (const std::exception*,
+                             const String&,
+                             int) override
+    {
+        jassertfalse;
+    }
+
 private:
     ScopedPointer<ACCWindow> window;
+    ApplicationCommandManager applicationCommandManager;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ACCApplication)
 };

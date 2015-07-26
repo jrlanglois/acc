@@ -223,9 +223,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\ACC\ACCModule.cpp">
-      <Filter>jrlanglois_acc\ACC</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\ACC\core\ACCCodeTokeniser.cpp">
       <Filter>jrlanglois_acc\ACC\core</Filter>
     </ClCompile>
@@ -244,8 +241,14 @@
     <ClCompile Include="..\..\Source\ACC\graphics\ACCMenuBarItems.cpp">
       <Filter>jrlanglois_acc\ACC\graphics</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\ACC\graphics\ACCMessageListComponent.cpp">
+      <Filter>jrlanglois_acc\ACC\graphics</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ACC\graphics\ACCWindow.cpp">
       <Filter>jrlanglois_acc\ACC\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ACC\ACCModule.cpp">
+      <Filter>jrlanglois_acc\ACC</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Main\Main.cpp">
       <Filter>jrlanglois_acc\Main</Filter>
@@ -1194,9 +1197,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\ACC\ACCModule.h">
-      <Filter>jrlanglois_acc\ACC</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\ACC\core\ACCCodeTokeniser.h">
       <Filter>jrlanglois_acc\ACC\core</Filter>
     </ClInclude>
@@ -1218,8 +1218,14 @@
     <ClInclude Include="..\..\Source\ACC\graphics\ACCMenuBarItems.h">
       <Filter>jrlanglois_acc\ACC\graphics</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\ACC\graphics\ACCMessageListComponent.h">
+      <Filter>jrlanglois_acc\ACC\graphics</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\ACC\graphics\ACCWindow.h">
       <Filter>jrlanglois_acc\ACC\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ACC\ACCModule.h">
+      <Filter>jrlanglois_acc\ACC</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\original\common.h">
       <Filter>jrlanglois_acc\original</Filter>

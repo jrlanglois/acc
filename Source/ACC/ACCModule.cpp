@@ -8,5 +8,6 @@ namespace acc
     #include "graphics/ACCCodeEditor.cpp"
     #include "graphics/ACCMainComponent.cpp"
     #include "graphics/ACCMenuBarItems.cpp"
+    #include "graphics/ACCMessageListComponent.cpp"
     #include "graphics/ACCWindow.cpp"
 }

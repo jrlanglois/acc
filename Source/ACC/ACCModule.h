@@ -26,6 +26,7 @@ namespace acc
     #include "graphics/ACCCodeEditor.h"
     #include "graphics/ACCMainComponent.h"
     #include "graphics/ACCMenuBarItems.h"
+    #include "graphics/ACCMessageListComponent.h"
     #include "graphics/ACCWindow.h"
 }
 

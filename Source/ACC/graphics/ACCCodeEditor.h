@@ -1,5 +1,5 @@
-#ifndef ACC_CODE_EDITOR_H
-#define ACC_CODE_EDITOR_H
+#ifndef ACC_CODE_EDITOR_COMPONENT_H
+#define ACC_CODE_EDITOR_COMPONENT_H
 
 class ACCCodeEditorComponent : public CodeEditorComponent
 {
@@ -18,4 +18,4 @@ private:
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ACCCodeEditorComponent)
 };
 
-#endif //ACC_CODE_EDITOR_H
+#endif //ACC_CODE_EDITOR_COMPONENT_H

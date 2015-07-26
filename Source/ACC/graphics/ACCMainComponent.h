@@ -1,6 +1,8 @@
 #ifndef ACC_MAIN_COMPONENT_H
 #define ACC_MAIN_COMPONENT_H
 
+#include "ACCMessageListComponent.h"
+
 class ACCMainComponent : public Component,
                          private MenuBarModel,
                          private MenuBarModel::Listener
@@ -31,7 +33,12 @@ private:
     Toolbar toolbar;
 
     CodeDocument codeDocument;
+
+    StretchableLayoutManager layoutManager;
+
     ScopedPointer<ACCCodeEditorComponent> codeEditorComponent;
+    ScopedPointer<StretchableLayoutResizerBar> bar;
+    MessageListComponent messageListComponent;
 
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ACCMainComponent)

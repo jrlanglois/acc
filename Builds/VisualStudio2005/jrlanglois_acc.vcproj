@@ -31,7 +31,7 @@
             BufferSecurityCheck=""
             DebugInformationFormat="4"
             AdditionalIncludeDirectories="..\..\JuceLibraryCode;..\..\..\JUCE\modules"
-            PreprocessorDefinitions="WIN32;_WINDOWS;DEBUG;_DEBUG;JUCER_VS2005_78A5003=1;JUCE_APP_VERSION=1.0.0;JUCE_APP_VERSION_HEX=0x10000"
+            PreprocessorDefinitions="_CRT_SECURE_NO_WARNINGS;WIN32;_WINDOWS;DEBUG;_DEBUG;JUCER_VS2005_78A5003=1;JUCE_APP_VERSION=1.0.0;JUCE_APP_VERSION_HEX=0x10000"
             RuntimeLibrary="1"
             RuntimeTypeInfo="true"
             UsePrecompiledHeader="0"
@@ -86,7 +86,7 @@
             InlineFunctionExpansion="1"
             StringPooling="true"
             AdditionalIncludeDirectories="..\..\JuceLibraryCode;..\..\..\JUCE\modules"
-            PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;JUCER_VS2005_78A5003=1;JUCE_APP_VERSION=1.0.0;JUCE_APP_VERSION_HEX=0x10000"
+            PreprocessorDefinitions="_CRT_SECURE_NO_WARNINGS;WIN32;_WINDOWS;NDEBUG;JUCER_VS2005_78A5003=1;JUCE_APP_VERSION=1.0.0;JUCE_APP_VERSION_HEX=0x10000"
             RuntimeLibrary="0"
             RuntimeTypeInfo="true"
             UsePrecompiledHeader="0"
@@ -126,9 +126,6 @@
   <Files>
     <Filter Name="jrlanglois_acc">
       <Filter Name="ACC">
-        <File RelativePath="..\..\Source\ACC\juce_module_info"/>
-        <File RelativePath="..\..\Source\ACC\ACCModule.cpp"/>
-        <File RelativePath="..\..\Source\ACC\ACCModule.h"/>
         <Filter Name="core">
           <File RelativePath="..\..\Source\ACC\core\ACCCodeTokeniser.cpp">
             <FileConfiguration Name="Debug|Win32"
@@ -199,6 +196,17 @@
             </FileConfiguration>
           </File>
           <File RelativePath="..\..\Source\ACC\graphics\ACCMenuBarItems.h"/>
+          <File RelativePath="..\..\Source\ACC\graphics\ACCMessageListComponent.cpp">
+            <FileConfiguration Name="Debug|Win32"
+                               ExcludedFromBuild="true">
+              <Tool Name="VCCLCompilerTool"/>
+            </FileConfiguration>
+            <FileConfiguration Name="Release|Win32"
+                               ExcludedFromBuild="true">
+              <Tool Name="VCCLCompilerTool"/>
+            </FileConfiguration>
+          </File>
+          <File RelativePath="..\..\Source\ACC\graphics\ACCMessageListComponent.h"/>
           <File RelativePath="..\..\Source\ACC\graphics\ACCWindow.cpp">
             <FileConfiguration Name="Debug|Win32"
                                ExcludedFromBuild="true">
@@ -211,6 +219,9 @@
           </File>
           <File RelativePath="..\..\Source\ACC\graphics\ACCWindow.h"/>
         </Filter>
+        <File RelativePath="..\..\Source\ACC\ACCModule.cpp"/>
+        <File RelativePath="..\..\Source\ACC\ACCModule.h"/>
+        <File RelativePath="..\..\Source\ACC\juce_module_info"/>
       </Filter>
       <Filter Name="Main">
         <File RelativePath="..\..\Source\Main\Main.cpp"/>

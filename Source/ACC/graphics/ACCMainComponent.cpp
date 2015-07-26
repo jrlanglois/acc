@@ -37,11 +37,19 @@ ACCMainComponent::ACCMainComponent() :
 {
     codeEditorComponent = new ACCCodeEditorComponent (codeDocument);
 
+    bar = new StretchableLayoutResizerBar (&layoutManager, 1, false);
+
+    layoutManager.setItemLayout (0, -0.1, -0.8, -0.6);
+    layoutManager.setItemLayout (1, 5.0, 5.0, 5.0);
+    layoutManager.setItemLayout (2, -0.1, -0.8, -0.3);
+
     menuBarComponent.setModel (this);
 
     addAndMakeVisible (&menuBarComponent);
     addAndMakeVisible (&toolbar);
     addAndMakeVisible (codeEditorComponent);
+    addAndMakeVisible (bar);
+    addAndMakeVisible (&messageListComponent);
 
     String path = File::getSpecialLocation (File::currentApplicationFile)
                         .getFullPathName()
@@ -55,7 +63,7 @@ ACCMainComponent::ACCMainComponent() :
 
 Result ACCMainComponent::setFile (const File& file)
 {
-    Result result = acc::ScriptParser::isACCSourceFile (file);
+    const Result result = acc::ScriptParser::isACCSourceFile (file);
 
     if (result.failed())
         return result;
@@ -71,16 +79,26 @@ void ACCMainComponent::resized()
     {
         menuBarHeight = 24,
         toolBarHeight = 32,
-        codeEditorOffset = menuBarHeight + toolBarHeight
+        leftoverOffset = menuBarHeight + toolBarHeight
     };
 
-    const int w = getWidth();
+    Rectangle<int> r (getLocalBounds().withPosition (1, 1).withWidth (getWidth() - 2));
 
-    menuBarComponent.setBounds (0, 0, w, menuBarHeight);
-    toolbar.setBounds (0, menuBarHeight, w, toolBarHeight);
+    menuBarComponent.setBounds (r.withHeight (menuBarHeight));
+    toolbar.setBounds (r.withHeight (toolBarHeight).withY (menuBarComponent.getBottom() + 1));
 
-    if (codeEditorComponent != nullptr)
-        codeEditorComponent->setBounds (0, codeEditorOffset, w, getHeight() - codeEditorOffset);
+    Array<Component*> comps;
+    comps.add (codeEditorComponent);
+    comps.add (bar);
+    comps.add (&messageListComponent);
+
+    const int b = toolbar.getBottom() + 1;
+    r = r.withHeight (r.getHeight() - b)
+         .withY (b);
+
+    layoutManager.layOutComponents (comps.getRawDataPointer(), comps.size(),
+                                    r.getX(), r.getY(), r.getWidth(), r.getHeight(),
+                                    true, true);
 }
 
 //==============================================================================
