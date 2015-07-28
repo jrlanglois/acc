@@ -58,7 +58,7 @@ ACCMainComponent::ACCMainComponent() :
 
     setFile (File (path));
 
-    setSize (800, 600);
+    setSize (1024, 768);
 }
 
 Result ACCMainComponent::setFile (const File& file)

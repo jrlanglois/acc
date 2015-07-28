@@ -10,7 +10,7 @@ public:
     //==============================================================================
     void addErrorItem (const String& description, const String& file, int line);
     void addWarningItem (const String& description, const String& file, int line);
-    void addMessageItem (const String& description);
+    void addMessageItem (const String& description, const String& file, int line);
 
     void clear();
 
@@ -26,7 +26,13 @@ public:
 
 private:
     //==============================================================================
-    class HeaderComponent;
+    enum HeaderColumnIds
+    {
+        itemTypeId,
+        itemDescriptionId,
+        itemFileId,
+        itemLineNumberId
+    };
 
     //==============================================================================
     enum ItemType
@@ -38,24 +44,16 @@ private:
 
     struct ListItem
     {
-        ListItem (const String& desc, const String& f,
-                  int lineNumber, bool isError) :
-            itemType (isError ? errorItem : warningItem),
+        ListItem (ItemType itemType, const String& desc, const String& f, int lineNumber) :
+            type (itemType),
             description (desc),
             file (f),
             line (lineNumber)
         {
         }
 
-        ListItem (const String& desc) :
-            itemType (messageItem),
-            description (desc),
-            line (0)
-        {
-        }
-
         ListItem (const ListItem& other) :
-            itemType (other.itemType),
+            type (other.type),
             description (other.description),
             file (other.file),
             line (other.line)
@@ -66,7 +64,7 @@ private:
         {
             if (this != &other)
             {
-                itemType = other.itemType;
+                type = other.type;
                 description = other.description;
                 file = other.file;
                 line = other.line;
@@ -75,12 +73,20 @@ private:
             return *this;
         }
 
-        ItemType itemType;
+        ItemType type;
         String description, file;
         int line;
     };
 
     Array<ListItem> items;
+
+    //==============================================================================
+    void addItem (ItemType type, const String& description, const String& file, int line);
+
+    static void paintTextCell (const String& text, Graphics& g, int w, int h);
+    static void paintErrorCell (const ListItem& item, Graphics& g, int w, int h);
+    static void paintWarningCell (const ListItem& item, Graphics& g, int w, int h);
+    static void paintMessageCell (const ListItem& item, Graphics& g, int w, int h);
 
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MessageListComponent)

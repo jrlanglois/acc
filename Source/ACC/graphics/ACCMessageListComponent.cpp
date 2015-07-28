@@ -1,38 +1,42 @@
 MessageListComponent::MessageListComponent()
 {
-    setModel (this);
+    TableHeaderComponent& header = getHeader();
 
-    addErrorItem ("desc", "file", 0);
-    addWarningItem ("desc", "file", 0);
-    addMessageItem ("desc");
+    header.addColumn (TRANS("Type"), itemTypeId, 50);
+    header.addColumn (TRANS("Description"), itemDescriptionId, 200);
+    header.addColumn (TRANS("File"), itemFileId, 100);
+    header.addColumn (TRANS("Line"), itemLineNumberId, 40);
+
+    addErrorItem ("Some really lengthy error message.", "C:/", 1);
+    addWarningItem ("Some important warning.", "C:/", 50);
+    addMessageItem ("An extremely interesting message, not brought to you by our sponsors.", "C:/", 100);
+
+    setModel (this);
 }
 
 //==============================================================================
-void MessageListComponent::addErrorItem (const String& desc, const String& file, int line)
+void MessageListComponent::addItem (const ItemType type, const String& desc, const String& file, const int line)
 {
     if (desc.isNotEmpty() && file.isNotEmpty())
     {
-        items.add (ListItem (desc, file, line, true));
+        items.add (ListItem (type, desc, file, line));
         repaint();
     }
 }
 
-void MessageListComponent::addWarningItem (const String& desc, const String& file, int line)
+void MessageListComponent::addErrorItem (const String& desc, const String& file, const int line)
 {
-    if (desc.isNotEmpty() && file.isNotEmpty())
-    {
-        items.add (ListItem (desc, file, line, false));
-        repaint();
-    }
+    addItem (errorItem, desc, file, line);
 }
 
-void MessageListComponent::addMessageItem (const String& desc)
+void MessageListComponent::addWarningItem (const String& desc, const String& file, const int line)
 {
-    if (desc.isNotEmpty())
-    {
-        items.add (ListItem (desc));
-        repaint();
-    }
+    addItem (warningItem, desc, file, line);
+}
+
+void MessageListComponent::addMessageItem (const String& desc, const String& file, const int line)
+{
+    addItem (messageItem, desc, file, line);
 }
 
 void MessageListComponent::clear()
@@ -60,23 +64,126 @@ void MessageListComponent::paintRowBackground (Graphics& g, const int rowNumber,
         g.fillAll (Colour (246, 246, 246));
 }
 
+//==============================================================================
+void MessageListComponent::paintErrorCell (const ListItem& item, Graphics& g,
+                                           const int w, const int h)
+{
+    const float iconSize = jmin ((float) w * 0.9f, (float) h * 0.9f);
+    const Rectangle<float> iconRect (iconSize, iconSize);
+
+    Path icon;
+    icon.addEllipse (iconRect);
+
+    g.setColour (Colours::darkred);
+    g.fillPath (icon);
+
+    const char character = 'X';
+
+    GlyphArrangement ga;
+    ga.addFittedText (Font (iconRect.getHeight() * 0.9f, Font::bold),
+                      String::charToString ((juce_wchar) (uint8) character),
+                      iconRect.getX(), iconRect.getY(),
+                      iconRect.getWidth(), iconRect.getHeight(),
+                      Justification::centred, false);
+    Path glyph;
+    ga.createPath (glyph);
+    g.setColour (Colours::white);
+    g.fillPath (glyph);
+}
+
+void MessageListComponent::paintWarningCell (const ListItem& item, Graphics& g,
+                                             const int w, const int h)
+{
+    const float iconSize = jmin ((float) w * 0.9f, (float) h * 0.9f);
+    const Rectangle<float> iconRect (iconSize, iconSize);
+
+    Path icon;
+    icon.addTriangle (iconRect.getX() + iconRect.getWidth() * 0.5f, iconRect.getY(),
+                      iconRect.getRight(), iconRect.getBottom(),
+                      iconRect.getX(), iconRect.getBottom());
+
+    g.setColour (Colours::yellow);
+    g.fillPath (icon);
+
+    const char character = '!';
+
+    GlyphArrangement ga;
+    ga.addFittedText (Font (iconRect.getHeight() * 0.9f, Font::bold),
+                      String::charToString ((juce_wchar) (uint8) character),
+                      iconRect.getX(), iconRect.getY(),
+                      iconRect.getWidth(), iconRect.getHeight(),
+                      Justification::centred, false);
+    Path glyph;
+    ga.createPath (glyph);
+    g.setColour (Colours::black);
+    g.fillPath (glyph);
+}
+
+void MessageListComponent::paintMessageCell (const ListItem& item, Graphics& g,
+                                             const int w, const int h)
+{
+    const float iconSize = jmin ((float) w * 0.9f, (float) h * 0.9f);
+    const Rectangle<float> iconRect (iconSize, iconSize);
+
+    Path icon;
+    icon.addEllipse (iconRect);
+
+    const char character = 'i';
+
+    GlyphArrangement ga;
+    ga.addFittedText (Font (iconRect.getHeight() * 0.9f, Font::bold),
+                      String::charToString ((juce_wchar) (uint8) character),
+                      iconRect.getX(), iconRect.getY(),
+                      iconRect.getWidth(), iconRect.getHeight(),
+                      Justification::centred, false);
+    ga.createPath (icon);
+
+    icon.setUsingNonZeroWinding (false);
+    g.setColour (Colours::blue);
+    g.fillPath (icon);
+}
+
+void MessageListComponent::paintTextCell (const String& text, Graphics& g,
+                                          const int w, const int h)
+{
+    g.setColour (Colours::black);
+    g.setFont (Font (12.0f, Font::plain));
+    g.drawText (text, 2, 0, w - 4, h, Justification::centredLeft, false);
+    g.setColour (Colours::black.withAlpha (0.2f));
+    g.fillRect (w - 1, 0, 1, h);
+}
+
 void MessageListComponent::paintCell (Graphics& g, const int rowNumber, const int columnId,
                                       const int width, const int height, const bool)
 {
     if (! isPositiveAndBelow (rowNumber, getNumRows()))
         return;
 
-    g.setColour (Colours::black);
-    g.setFont (Font (12.0f, Font::plain));
-
     const ListItem& item = items.getReference (rowNumber);
 
-    String text;
+    switch (columnId)
+    {
+        case itemTypeId:
+        {
+            switch (item.type)
+            {
+                case errorItem:     paintErrorCell (item, g, width, height); break;
+                case warningItem:   paintWarningCell (item, g, width, height); break;
+                case messageItem:   paintMessageCell (item, g, width, height); break;
 
-    if (columnId == 0)
-        jassertfalse;
+                default:
+                    jassertfalse; //???
+                break;
+            }
+        }
+        break;
 
-    g.drawText (item.description, 2, 0, width - 4, height, Justification::centredLeft, false);
-    g.setColour (Colours::black.withAlpha (0.2f));
-    g.fillRect (width - 1, 0, 1, height);
+        case itemDescriptionId: paintTextCell (item.description, g, width, height); break;
+        case itemFileId:        paintTextCell (item.file, g, width, height); break;
+        case itemLineNumberId:  paintTextCell (String (item.line), g, width, height); break;
+
+        default:
+            jassertfalse; //???
+        break;
+    }
 }
