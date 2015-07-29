@@ -84,9 +84,9 @@ private:
     void addItem (ItemType type, const String& description, const String& file, int line);
 
     static void paintTextCell (const String& text, Graphics& g, int w, int h);
-    static void paintErrorCell (const ListItem& item, Graphics& g, int w, int h);
-    static void paintWarningCell (const ListItem& item, Graphics& g, int w, int h);
-    static void paintMessageCell (const ListItem& item, Graphics& g, int w, int h);
+    static void paintErrorCell (Graphics& g, const Rectangle<float>& iconRect);
+    static void paintWarningCell (Graphics& g, const Rectangle<float>& iconRect);
+    static void paintMessageCell (Graphics& g, const Rectangle<float>& iconRect);
 
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MessageListComponent)

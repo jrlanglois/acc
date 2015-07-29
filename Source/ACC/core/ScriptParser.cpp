@@ -30,7 +30,7 @@ Result ScriptParser::isACCSourceFile (const File& potentialACCSourceFile)
 
 Result ScriptParser::evaluate (const File& accFile, const Parameters& parameters)
 {
-    Result result = isACCSourceFile (accFile);
+    const Result result = isACCSourceFile (accFile);
 
     if (result.failed())
         return result;

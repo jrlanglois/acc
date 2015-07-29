@@ -54,8 +54,8 @@ int MessageListComponent::getNumRows()
     return items.size();
 }
 
-void MessageListComponent::paintRowBackground (Graphics& g, const int rowNumber,
-                                               const int width, const int height,
+void MessageListComponent::paintRowBackground (Graphics& g, const int,
+                                               const int, const int,
                                                const bool rowIsSelected)
 {
     if (rowIsSelected)
@@ -65,82 +65,52 @@ void MessageListComponent::paintRowBackground (Graphics& g, const int rowNumber,
 }
 
 //==============================================================================
-void MessageListComponent::paintErrorCell (const ListItem& item, Graphics& g,
-                                           const int w, const int h)
+static void paintGraphic (Graphics& g,
+                          const Rectangle<float>& iconRect,
+                          Path& backgroundPath,
+                          Colour pathColour,
+                          uint8 character,
+                          Colour characterColour)
 {
-    const float iconSize = jmin ((float) w * 0.9f, (float) h * 0.9f);
-    const Rectangle<float> iconRect (iconSize, iconSize);
-
-    Path icon;
-    icon.addEllipse (iconRect);
-
-    g.setColour (Colours::darkred);
-    g.fillPath (icon);
-
-    const char character = 'X';
+    g.setColour (pathColour);
+    g.fillPath (backgroundPath);
 
     GlyphArrangement ga;
     ga.addFittedText (Font (iconRect.getHeight() * 0.9f, Font::bold),
-                      String::charToString ((juce_wchar) (uint8) character),
+                      String::charToString ((juce_wchar) character),
                       iconRect.getX(), iconRect.getY(),
                       iconRect.getWidth(), iconRect.getHeight(),
                       Justification::centred, false);
     Path glyph;
     ga.createPath (glyph);
-    g.setColour (Colours::white);
+    g.setColour (characterColour);
     g.fillPath (glyph);
 }
 
-void MessageListComponent::paintWarningCell (const ListItem& item, Graphics& g,
-                                             const int w, const int h)
+void MessageListComponent::paintErrorCell (Graphics& g, const Rectangle<float>& iconRect)
 {
-    const float iconSize = jmin ((float) w * 0.9f, (float) h * 0.9f);
-    const Rectangle<float> iconRect (iconSize, iconSize);
-
     Path icon;
-    icon.addTriangle (iconRect.getX() + iconRect.getWidth() * 0.5f, iconRect.getY(),
+    icon.addEllipse (iconRect);
+
+    paintGraphic (g, iconRect, icon, Colours::darkred, 'X', Colours::white);
+}
+
+void MessageListComponent::paintWarningCell (Graphics& g, const Rectangle<float>& iconRect)
+{
+    Path icon;
+    icon.addTriangle (iconRect.getX() + (iconRect.getWidth() * 0.5f), iconRect.getY(),
                       iconRect.getRight(), iconRect.getBottom(),
                       iconRect.getX(), iconRect.getBottom());
 
-    g.setColour (Colours::yellow);
-    g.fillPath (icon);
-
-    const char character = '!';
-
-    GlyphArrangement ga;
-    ga.addFittedText (Font (iconRect.getHeight() * 0.9f, Font::bold),
-                      String::charToString ((juce_wchar) (uint8) character),
-                      iconRect.getX(), iconRect.getY(),
-                      iconRect.getWidth(), iconRect.getHeight(),
-                      Justification::centred, false);
-    Path glyph;
-    ga.createPath (glyph);
-    g.setColour (Colours::black);
-    g.fillPath (glyph);
+    paintGraphic (g, iconRect, icon, Colours::yellow, '!', Colours::black);
 }
 
-void MessageListComponent::paintMessageCell (const ListItem& item, Graphics& g,
-                                             const int w, const int h)
+void MessageListComponent::paintMessageCell (Graphics& g, const Rectangle<float>& iconRect)
 {
-    const float iconSize = jmin ((float) w * 0.9f, (float) h * 0.9f);
-    const Rectangle<float> iconRect (iconSize, iconSize);
-
     Path icon;
     icon.addEllipse (iconRect);
 
-    const char character = 'i';
-
-    GlyphArrangement ga;
-    ga.addFittedText (Font (iconRect.getHeight() * 0.9f, Font::bold),
-                      String::charToString ((juce_wchar) (uint8) character),
-                      iconRect.getX(), iconRect.getY(),
-                      iconRect.getWidth(), iconRect.getHeight(),
-                      Justification::centred, false);
-    ga.createPath (icon);
-
-    icon.setUsingNonZeroWinding (false);
-    g.setColour (Colours::blue);
-    g.fillPath (icon);
+    paintGraphic (g, iconRect, icon, Colours::blue, 'i', Colours::white);
 }
 
 void MessageListComponent::paintTextCell (const String& text, Graphics& g,
@@ -165,11 +135,14 @@ void MessageListComponent::paintCell (Graphics& g, const int rowNumber, const in
     {
         case itemTypeId:
         {
+            const float iconSize = jmin ((float) width * 0.9f, (float) height * 0.9f);
+            const Rectangle<float> iconRect (iconSize, iconSize);
+
             switch (item.type)
             {
-                case errorItem:     paintErrorCell (item, g, width, height); break;
-                case warningItem:   paintWarningCell (item, g, width, height); break;
-                case messageItem:   paintMessageCell (item, g, width, height); break;
+                case errorItem:     paintErrorCell (g, iconRect); break;
+                case warningItem:   paintWarningCell (g, iconRect); break;
+                case messageItem:   paintMessageCell (g, iconRect); break;
 
                 default:
                     jassertfalse; //???
