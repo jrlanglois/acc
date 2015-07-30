@@ -24,6 +24,7 @@ namespace acc
     #include "core/ScriptParser.h"
     #include "graphics/ACCApplicationCommands.h"
     #include "graphics/ACCCodeEditor.h"
+    #include "graphics/ACCConsoleComponent.h"
     #include "graphics/ACCMainComponent.h"
     #include "graphics/ACCMenuBarItems.h"
     #include "graphics/ACCMessageListComponent.h"

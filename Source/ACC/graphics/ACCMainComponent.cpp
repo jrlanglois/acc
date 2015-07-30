@@ -32,15 +32,114 @@ private:
 };
 
 //==============================================================================
+namespace LayoutHelpers
+{
+    static const double barSize = 5.0;
+
+    static void layoutResizerBar (StretchableLayoutManager& layoutManager, int index)
+    {
+        layoutManager.setItemLayout (index, barSize, barSize, barSize);
+    }
+}
+
+//==============================================================================
+class ACCMainComponent::VerticalLayout : public Component
+{
+public:
+    VerticalLayout() :
+        hasBeenLayedOut (false)
+    {
+    }
+
+    void addComponent (Component& component)
+    {
+        if (! hasBeenLayedOut)
+        {
+            jassert (! comps.contains (&component));
+
+            comps.add (&component);
+            addAndMakeVisible (&component);
+        }
+    }
+
+    void addBar()
+    {
+        if (! hasBeenLayedOut)
+        {
+            const int index = comps.size() + 1;
+
+            StretchableLayoutResizerBar* bar = new StretchableLayoutResizerBar (&layoutManager, index, true);
+
+            comps.add (bars.add (bar));
+            addAndMakeVisible (bar);
+        }
+    }
+
+    void clear()
+    {
+        comps.clear();
+        bars.clear();
+        hasBeenLayedOut = false;
+    }
+
+    void resized() override
+    {
+        layout();
+
+        const Rectangle<int> r (getLocalBounds());
+
+        layoutManager.layOutComponents (comps.getRawDataPointer(), comps.size(),
+                                        r.getX(), r.getY(), r.getWidth(), r.getHeight(),
+                                        false, true);
+    }
+
+private:
+    Array<Component*> comps;
+    OwnedArray<StretchableLayoutResizerBar> bars;
+    StretchableLayoutManager layoutManager;
+
+    bool hasBeenLayedOut;
+
+    void layout()
+    {
+        if (! hasBeenLayedOut)
+        {
+            const int numComps = comps.size();
+            const int numBars = bars.size();
+
+            double maxSize = (double) getWidth() - (double) (numBars * LayoutHelpers::barSize);
+            maxSize = maxSize / (numComps - numBars);
+            maxSize = maxSize / getWidth();
+
+            for (int i = 0; i < numComps; ++i)
+            {
+                if (StretchableLayoutResizerBar* b = dynamic_cast<StretchableLayoutResizerBar*>(comps.getUnchecked (i)))
+                    LayoutHelpers::layoutResizerBar (layoutManager, i);
+                else
+                    layoutManager.setItemLayout (i, -0.1, -maxSize, -0.25);
+            }
+
+            hasBeenLayedOut = true;
+        }
+    }
+
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (VerticalLayout)
+};
+
+//==============================================================================
 ACCMainComponent::ACCMainComponent() :
-    menuBarComponent (nullptr)
+    verticalLayout (new VerticalLayout())
 {
     codeEditorComponent = new ACCCodeEditorComponent (codeDocument);
 
     bar = new StretchableLayoutResizerBar (&layoutManager, 1, false);
 
+    verticalLayout->addComponent (messageListComponent);
+    verticalLayout->addBar();
+    verticalLayout->addComponent (consoleComponent);
+
     layoutManager.setItemLayout (0, -0.1, -0.8, -0.6);
-    layoutManager.setItemLayout (1, 5.0, 5.0, 5.0);
+    LayoutHelpers::layoutResizerBar (layoutManager, 1);
     layoutManager.setItemLayout (2, -0.1, -0.8, -0.3);
 
     menuBarComponent.setModel (this);
@@ -49,7 +148,7 @@ ACCMainComponent::ACCMainComponent() :
     addAndMakeVisible (&toolbar);
     addAndMakeVisible (codeEditorComponent);
     addAndMakeVisible (bar);
-    addAndMakeVisible (&messageListComponent);
+    addAndMakeVisible (verticalLayout);
 
     String path = File::getSpecialLocation (File::currentApplicationFile)
                         .getFullPathName()
@@ -90,7 +189,7 @@ void ACCMainComponent::resized()
     Array<Component*> comps;
     comps.add (codeEditorComponent);
     comps.add (bar);
-    comps.add (&messageListComponent);
+    comps.add (verticalLayout);
 
     const int b = toolbar.getBottom() + 1;
     r = r.withHeight (r.getHeight() - b)

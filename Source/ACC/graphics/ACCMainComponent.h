@@ -38,7 +38,12 @@ private:
 
     ScopedPointer<ACCCodeEditorComponent> codeEditorComponent;
     ScopedPointer<StretchableLayoutResizerBar> bar;
+
     MessageListComponent messageListComponent;
+    ConsoleComponent consoleComponent;
+
+    class VerticalLayout;
+    ScopedPointer<VerticalLayout> verticalLayout;
 
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ACCMainComponent)
