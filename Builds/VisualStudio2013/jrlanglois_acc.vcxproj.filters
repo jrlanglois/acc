@@ -277,6 +277,9 @@
     <ClCompile Include="..\..\Source\original\token.c">
       <Filter>jrlanglois_acc\original</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\JUCE\modules\juce_core\text\juce_Base64.cpp">
+      <Filter>Juce Modules\juce_core\text</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\..\JUCE\modules\juce_core\text\juce_CharacterFunctions.cpp">
       <Filter>Juce Modules\juce_core\text</Filter>
     </ClCompile>
@@ -1250,6 +1253,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\original\token.h">
       <Filter>jrlanglois_acc\original</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\JUCE\modules\juce_core\text\juce_Base64.h">
+      <Filter>Juce Modules\juce_core\text</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\text\juce_CharacterFunctions.h">
       <Filter>Juce Modules\juce_core\text</Filter>

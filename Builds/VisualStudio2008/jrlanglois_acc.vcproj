@@ -324,6 +324,17 @@
     <Filter Name="Juce Modules">
       <Filter Name="juce_core">
         <Filter Name="text">
+          <File RelativePath="..\..\..\JUCE\modules\juce_core\text\juce_Base64.cpp">
+            <FileConfiguration Name="Debug|Win32"
+                               ExcludedFromBuild="true">
+              <Tool Name="VCCLCompilerTool"/>
+            </FileConfiguration>
+            <FileConfiguration Name="Release|Win32"
+                               ExcludedFromBuild="true">
+              <Tool Name="VCCLCompilerTool"/>
+            </FileConfiguration>
+          </File>
+          <File RelativePath="..\..\..\JUCE\modules\juce_core\text\juce_Base64.h"/>
           <File RelativePath="..\..\..\JUCE\modules\juce_core\text\juce_CharacterFunctions.cpp">
             <FileConfiguration Name="Debug|Win32"
                                ExcludedFromBuild="true">

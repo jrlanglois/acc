@@ -173,6 +173,9 @@
     <ClCompile Include="..\..\Source\original\token.c">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\..\JUCE\modules\juce_core\text\juce_Base64.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\..\JUCE\modules\juce_core\text\juce_CharacterFunctions.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
@@ -1037,6 +1040,7 @@
     <ClInclude Include="..\..\Source\original\strlist.h"/>
     <ClInclude Include="..\..\Source\original\symbol.h"/>
     <ClInclude Include="..\..\Source\original\token.h"/>
+    <ClInclude Include="..\..\..\JUCE\modules\juce_core\text\juce_Base64.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\text\juce_CharacterFunctions.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\text\juce_CharPointer_ASCII.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\text\juce_CharPointer_UTF8.h"/>
