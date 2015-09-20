@@ -1,0 +1,13 @@
+//Single line comment
+
+/**
+	Multiline comment
+*/
+
+script 1 ENTER
+{
+}
+
+script "JRLACCTest" ENTER
+{
+}

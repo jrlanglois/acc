@@ -32,29 +32,42 @@ private:
     //==============================================================================
     enum Configuration
     {
-        maxIdentifierLength = 32,
-        maxFileNameLength = 512,
-        maxStatementLength = 4096,
-        maxQuotedLength = 32768,
-        maxNumStrings = 32768,
+        maxIdentifierLength     = 32,
+        maxFileNameLength       = 512,
+        maxStatementLength      = 4096,
+        maxQuotedLength         = 32768,
+        maxNumStrings           = 32768,
 
-        maxNumScripts = 1000,
-        maxNumMapVariables = 128,
-        maxNumWorldVariables = 256,
-        maxNumGlobalVariables = 64,
+        maxNumScripts           = 1000,
+        maxNumMapVariables      = 128,
+        maxNumWorldVariables    = 256,
+        maxNumGlobalVariables   = 64,
 
-        maxNumScriptArrays = 255,
-        maxNumFunctions = 256,
-        maxNumImports = 256,
-        maxNumIncludePaths = 16,
-        maxNumTranslations = 32,
+        maxNumScriptArrays      = 255,
+        maxNumFunctions         = 256,
+        maxNumImports           = 256,
+        maxNumIncludePaths      = 16,
+        maxNumTranslations      = 32,
 
         defaultObjectSize = 65536
     };
 
     //==============================================================================
+    struct ScopeVariable
+    {
+        ScopeVariable() :
+            numVariables (0),
+            numArrays (0)
+        {
+        }
+
+        int numVariables, numArrays;
+    };
+
     int numMaps;
-    int numWorldVariables;
+    ScopeVariable worldVariables, globalVariables;
+
+    ACCCodeTokeniser tokeniser;
 
     //==============================================================================
     Result evaluate (const String& accScriptCode, const Parameters& parameters);

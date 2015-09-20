@@ -16,26 +16,27 @@ namespace ACCCodeTokeniserHelpers
     static const char* const keywords4Char[] =
     {
         "bool", "case", "else", "goto", "void",
+        "OPEN",
         nullptr
     };
 
     static const char* const keywords5Char[] =
     {
-        "break", "const", "death", "enter", "event",
+        "break", "const", "DEATH", "ENTER", "event",
         "print", "until", "while", "world",
         nullptr
     };
 
     static const char* const keywords6Char[] =
     {
-        "define", "global", "import", "pickup", "return",
-        "script", "static", "strcpy", "switch",
+        "define", "global", "import", "PICKUP", "return",
+        "RETURN", "script", "static", "strcpy", "switch",
         nullptr
     };
 
     static const char* const keywords7Char[] =
     {
-        "default", "include", "library", "respawn",
+        "default", "include", "library", "RESPAWN",
         "restart", "special", "suspend",
         nullptr
     };
@@ -48,20 +49,20 @@ namespace ACCCodeTokeniserHelpers
 
     static const char* const keywords9Char[] =
     {
-        "libdefine", "lightning", "nocompact", "printbold",
-        "redreturn", "terminate", "unloading", "wadauthor",
+        "libdefine", "LIGHTNING", "nocompact", "printbold",
+        "REDRETURN", "terminate", "UNLOADING", "wadauthor",
         nullptr
     };
 
     static const char* const keywords10Char[] =
     {
-        "bluereturn", "clientside", "disconnect", "hudmessage",
+        "BLUERETURN", "clientside", "DISCONNECT", "hudmessage",
         nullptr
     };
 
     static const char* const keywordsOther[] =
     {
-        "nowadauthor", "whitereturn", "encryptstrings",
+        "nowadauthor", "WHITERETURN", "encryptstrings",
         "hudmessagebold", "acs_executewait", "createtranslation",
         "acs_namedexecutewait",
         nullptr
@@ -151,14 +152,14 @@ bool ACCCodeTokeniser::isIdentifierBody (juce_wchar c) noexcept
 ACCCodeTokeniser::TokenType ACCCodeTokeniser::parseIdentifier (CodeDocument::Iterator& source)
 {
     int tokenLength = 0;
-    String::CharPointerType::CharType possibleIdentifier [100];
+    String::CharPointerType::CharType possibleIdentifier[100];
     String::CharPointerType possible (possibleIdentifier);
 
     while (isIdentifierBody (source.peekNextChar()))
     {
         const juce_wchar c = source.nextChar();
 
-        if (tokenLength < 20)
+        if (tokenLength < longestKeywordLength)
             possible.write (c);
 
         ++tokenLength;

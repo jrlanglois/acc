@@ -153,7 +153,7 @@ ACCMainComponent::ACCMainComponent() :
     String path = File::getSpecialLocation (File::currentApplicationFile)
                         .getFullPathName()
                         .upToFirstOccurrenceOf ("jrl_acc", true, true)
-                  + "/Source/UnitTests/AllTests.acs";
+                  + "/Source/UnitTests/BasicTest.acs";
 
     setFile (File (path));
 
