@@ -174,6 +174,17 @@
             </FileConfiguration>
           </File>
           <File RelativePath="..\..\Source\ACC\graphics\ACCCodeEditor.h"/>
+          <File RelativePath="..\..\Source\ACC\graphics\ACCConsoleComponent.cpp">
+            <FileConfiguration Name="Debug|Win32"
+                               ExcludedFromBuild="true">
+              <Tool Name="VCCLCompilerTool"/>
+            </FileConfiguration>
+            <FileConfiguration Name="Release|Win32"
+                               ExcludedFromBuild="true">
+              <Tool Name="VCCLCompilerTool"/>
+            </FileConfiguration>
+          </File>
+          <File RelativePath="..\..\Source\ACC\graphics\ACCConsoleComponent.h"/>
           <File RelativePath="..\..\Source\ACC\graphics\ACCMainComponent.cpp">
             <FileConfiguration Name="Debug|Win32"
                                ExcludedFromBuild="true">

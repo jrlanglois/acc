@@ -3,59 +3,68 @@ namespace ACCCodeTokeniserHelpers
 {
     static const char* const keywords2Char[] =
     {
-        "do", "if", nullptr
+        "do", "if",
+        nullptr
     };
 
     static const char* const keywords3Char[] =
     {
-        "for", "int", "log", "net", "not", "str", nullptr
+        "for", "int", "log", "net", "not", "str",
+        nullptr
     };
 
     static const char* const keywords4Char[] =
     {
-        "bool", "case", "else", "goto", "void", nullptr
+        "bool", "case", "else", "goto", "void",
+        nullptr
     };
 
     static const char* const keywords5Char[] =
     {
         "break", "const", "death", "enter", "event",
-        "print", "until", "while", "world", nullptr
+        "print", "until", "while", "world",
+        nullptr
     };
 
     static const char* const keywords6Char[] =
     {
         "define", "global", "import", "pickup", "return",
-        "script", "static", "strcpy", "switch", nullptr
+        "script", "static", "strcpy", "switch",
+        nullptr
     };
 
     static const char* const keywords7Char[] =
     {
         "default", "include", "library", "respawn",
-        "restart", "special", "suspend", nullptr
+        "restart", "special", "suspend",
+        nullptr
     };
 
     static const char* const keywords8Char[] =
     {
-        "continue", "function", "strparam", nullptr
+        "continue", "function", "strparam",
+        nullptr
     };
 
     static const char* const keywords9Char[] =
     {
-        "libdefine", "lightning", "nocompact", "printbold", "redreturn",
-        "terminate", "unloading", "wadauthor", nullptr
+        "libdefine", "lightning", "nocompact", "printbold",
+        "redreturn", "terminate", "unloading", "wadauthor",
+        nullptr
     };
 
     static const char* const keywords10Char[] =
     {
-        "bluereturn", "clientside", "disconnect",
-        "hudmessage", nullptr
+        "bluereturn", "clientside", "disconnect", "hudmessage",
+        nullptr
     };
 
     static const char* const keywordsOther[] =
     {
         "nowadauthor", "whitereturn", "encryptstrings",
         "hudmessagebold", "acs_executewait", "createtranslation",
-        "acs_namedexecutewait", nullptr
+        "acs_namedexecutewait",
+        nullptr
     };
 }
 
@@ -110,6 +119,7 @@ bool ACCCodeTokeniser::isReservedKeyword (const String& token) noexcept
         case 10:    k = keywords10Char; break;
 
         default:
+        {
             if (tokenLength < shortestKeywordLength
                 || tokenLength > longestKeywordLength)
             {
@@ -117,6 +127,7 @@ bool ACCCodeTokeniser::isReservedKeyword (const String& token) noexcept
             }
 
             k = keywordsOther;
+        }
         break;
     }
 

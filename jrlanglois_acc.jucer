@@ -7,40 +7,44 @@
   <MAINGROUP id="iYWOgq" name="jrlanglois_acc">
     <GROUP id="{FF191AC5-CBD3-92E4-D92A-2299B3465EB7}" name="ACC">
       <GROUP id="{6960AC71-A9FA-722C-A93C-C51747AFE384}" name="core">
-        <FILE id="pcqomO" name="ACCCodeTokeniser.cpp" compile="0" resource="0"
+        <FILE id="vqdNPR" name="ACCCodeTokeniser.cpp" compile="0" resource="0"
               file="Source/ACC/core/ACCCodeTokeniser.cpp"/>
-        <FILE id="blXkp4" name="ACCCodeTokeniser.h" compile="0" resource="0"
+        <FILE id="HeTs4Z" name="ACCCodeTokeniser.h" compile="0" resource="0"
               file="Source/ACC/core/ACCCodeTokeniser.h"/>
-        <FILE id="H4fDex" name="Script.cpp" compile="0" resource="0" file="Source/ACC/core/Script.cpp"/>
-        <FILE id="mS2ynH" name="Script.h" compile="0" resource="0" file="Source/ACC/core/Script.h"/>
-        <FILE id="xf3hft" name="ScriptParser.cpp" compile="0" resource="0"
+        <FILE id="StINX7" name="Script.cpp" compile="0" resource="0" file="Source/ACC/core/Script.cpp"/>
+        <FILE id="AjN6nT" name="Script.h" compile="0" resource="0" file="Source/ACC/core/Script.h"/>
+        <FILE id="dGA0w2" name="ScriptParser.cpp" compile="0" resource="0"
               file="Source/ACC/core/ScriptParser.cpp"/>
-        <FILE id="vmrk5f" name="ScriptParser.h" compile="0" resource="0" file="Source/ACC/core/ScriptParser.h"/>
+        <FILE id="bcy3zy" name="ScriptParser.h" compile="0" resource="0" file="Source/ACC/core/ScriptParser.h"/>
       </GROUP>
       <GROUP id="{C0D89FA8-3525-0059-F152-8B36511CE051}" name="graphics">
-        <FILE id="Qbaebf" name="ACCApplicationCommands.h" compile="0" resource="0"
+        <FILE id="CREZD2" name="ACCApplicationCommands.h" compile="0" resource="0"
               file="Source/ACC/graphics/ACCApplicationCommands.h"/>
-        <FILE id="hol98p" name="ACCCodeEditor.cpp" compile="0" resource="0"
+        <FILE id="DXkJdf" name="ACCCodeEditor.cpp" compile="0" resource="0"
               file="Source/ACC/graphics/ACCCodeEditor.cpp"/>
-        <FILE id="RUh1nP" name="ACCCodeEditor.h" compile="0" resource="0" file="Source/ACC/graphics/ACCCodeEditor.h"/>
-        <FILE id="pdLvl4" name="ACCMainComponent.cpp" compile="0" resource="0"
+        <FILE id="A99niC" name="ACCCodeEditor.h" compile="0" resource="0" file="Source/ACC/graphics/ACCCodeEditor.h"/>
+        <FILE id="OIG3tf" name="ACCConsoleComponent.cpp" compile="0" resource="0"
+              file="Source/ACC/graphics/ACCConsoleComponent.cpp"/>
+        <FILE id="Yp7sgM" name="ACCConsoleComponent.h" compile="0" resource="0"
+              file="Source/ACC/graphics/ACCConsoleComponent.h"/>
+        <FILE id="m8QOaE" name="ACCMainComponent.cpp" compile="0" resource="0"
               file="Source/ACC/graphics/ACCMainComponent.cpp"/>
-        <FILE id="ElPrqq" name="ACCMainComponent.h" compile="0" resource="0"
+        <FILE id="MuBcFQ" name="ACCMainComponent.h" compile="0" resource="0"
               file="Source/ACC/graphics/ACCMainComponent.h"/>
-        <FILE id="ZSWk4s" name="ACCMenuBarItems.cpp" compile="0" resource="0"
+        <FILE id="rJAtp9" name="ACCMenuBarItems.cpp" compile="0" resource="0"
               file="Source/ACC/graphics/ACCMenuBarItems.cpp"/>
-        <FILE id="S5nYHT" name="ACCMenuBarItems.h" compile="0" resource="0"
+        <FILE id="wKtlxL" name="ACCMenuBarItems.h" compile="0" resource="0"
               file="Source/ACC/graphics/ACCMenuBarItems.h"/>
-        <FILE id="DVWGCW" name="ACCMessageListComponent.cpp" compile="0" resource="0"
+        <FILE id="PxgHwH" name="ACCMessageListComponent.cpp" compile="0" resource="0"
               file="Source/ACC/graphics/ACCMessageListComponent.cpp"/>
-        <FILE id="qVeyYJ" name="ACCMessageListComponent.h" compile="0" resource="0"
+        <FILE id="LYSrzH" name="ACCMessageListComponent.h" compile="0" resource="0"
               file="Source/ACC/graphics/ACCMessageListComponent.h"/>
-        <FILE id="AMKswN" name="ACCWindow.cpp" compile="0" resource="0" file="Source/ACC/graphics/ACCWindow.cpp"/>
-        <FILE id="XEggCM" name="ACCWindow.h" compile="0" resource="0" file="Source/ACC/graphics/ACCWindow.h"/>
+        <FILE id="qZOPA3" name="ACCWindow.cpp" compile="0" resource="0" file="Source/ACC/graphics/ACCWindow.cpp"/>
+        <FILE id="ywV3xc" name="ACCWindow.h" compile="0" resource="0" file="Source/ACC/graphics/ACCWindow.h"/>
       </GROUP>
-      <FILE id="QtzeOc" name="ACCModule.cpp" compile="1" resource="0" file="Source/ACC/ACCModule.cpp"/>
-      <FILE id="QX7SqX" name="ACCModule.h" compile="0" resource="0" file="Source/ACC/ACCModule.h"/>
-      <FILE id="Rd5Owp" name="juce_module_info" compile="0" resource="0"
+      <FILE id="v3PJrM" name="ACCModule.cpp" compile="1" resource="0" file="Source/ACC/ACCModule.cpp"/>
+      <FILE id="G446Yk" name="ACCModule.h" compile="0" resource="0" file="Source/ACC/ACCModule.h"/>
+      <FILE id="lwJfS9" name="juce_module_info" compile="0" resource="0"
             file="Source/ACC/juce_module_info"/>
     </GROUP>
     <GROUP id="{95C766BF-8A8C-18A8-16E3-1068F4981A45}" name="Main">

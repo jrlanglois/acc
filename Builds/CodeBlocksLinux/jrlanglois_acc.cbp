@@ -113,6 +113,14 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+    <Unit filename="../../Source/ACC/graphics/ACCConsoleComponent.cpp">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="../../Source/ACC/graphics/ACCConsoleComponent.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="../../Source/ACC/graphics/ACCMainComponent.cpp">
       <Option compile="0"/>
       <Option link="0"/>

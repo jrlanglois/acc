@@ -235,6 +235,9 @@
     <ClCompile Include="..\..\Source\ACC\graphics\ACCCodeEditor.cpp">
       <Filter>jrlanglois_acc\ACC\graphics</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\ACC\graphics\ACCConsoleComponent.cpp">
+      <Filter>jrlanglois_acc\ACC\graphics</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ACC\graphics\ACCMainComponent.cpp">
       <Filter>jrlanglois_acc\ACC\graphics</Filter>
     </ClCompile>
@@ -1213,6 +1216,9 @@
       <Filter>jrlanglois_acc\ACC\graphics</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ACC\graphics\ACCCodeEditor.h">
+      <Filter>jrlanglois_acc\ACC\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ACC\graphics\ACCConsoleComponent.h">
       <Filter>jrlanglois_acc\ACC\graphics</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ACC\graphics\ACCMainComponent.h">
