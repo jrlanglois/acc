@@ -1,5 +1,13 @@
+
+
+//=============================================================================
 ConsoleComponent::ConsoleComponent()
 {
+    commandItems.add (new ExitItem());
+    commandItems.add (new CopyrightItem());
+    commandItems.add (new VersionItem());
+    commandItems.add (new ClearCommandItem (input, output));
+
     input.setMultiLine (false, false);
     input.addListener (this);
 
@@ -11,16 +19,24 @@ ConsoleComponent::ConsoleComponent()
     addAndMakeVisible (&output);
 }
 
+ConsoleComponent::~ConsoleComponent()
+{
+    commandItems.clear(); //N.B.: Just in case the commands rely on anything else that may be out of scope at this point
+}
+
 //=============================================================================
 void ConsoleComponent::addLine (const String& line, const bool prefixed)
 {
+    const String potentialNewLine = output.getTotalNumChars() > 0
+                                        ? newLine
+                                        : String::empty;
+
     output.moveCaretToEnd();
-    output.insertTextAtCaret (newLine + (prefixed ? "> " : String::empty) + line);
+    output.insertTextAtCaret (potentialNewLine + (prefixed ? "> " : String::empty) + line);
 }
 
 void ConsoleComponent::addLines (const StringArray& lines, const bool prefixed)
 {
-
 }
 
 void ConsoleComponent::clear()
@@ -30,47 +46,56 @@ void ConsoleComponent::clear()
 }
 
 //=============================================================================
-static bool isCommand (const String& source, const String& commandToCheck)
+bool ConsoleComponent::parseCommand (String& message, const String& command)
 {
-    return source.compareIgnoreCase (commandToCheck) == 0
-           || source.startsWithIgnoreCase (commandToCheck);
-}
+    StringArray tokens (StringArray::fromTokens (command, true));
+    tokens.removeEmptyStrings();
+    tokens.removeDuplicates (true);
+    tokens.trim();
 
-void ConsoleComponent::parseCommand (const String& command)
-{
-    if (isCommand (command, "clear"))
+    if (tokens.size() <= 0)
     {
-        input.clear();
-        output.clear();
+        message = "No commands to process!";
+        return false;
     }
-    else if (isCommand (command, "help"))
+
+    const String& firstToken = tokens.strings.getReference (0);
+
+    ConsoleCommandItem* item = nullptr;
+    for (int i = commandItems.size(); --i >= 0;)
     {
-        addLine ("Some important list of commands will eventually show up...", true);
+        if (commandItems.getUnchecked (i)->canProcess (firstToken))
+        {
+            item = commandItems.getUnchecked (i);
+            break;
+        }
     }
-    else if (isCommand (command, "version"))
+
+    if (item == nullptr)
     {
-        addLine (String ("V") + ProjectInfo::versionString, true);
+        message = command.quoted() + " is an unknown command!";
+        return false;
     }
-    else if (isCommand (command, "copyright"))
+
+    //Try processing 'help':
+    if (tokens.size() == 2
+        && tokens.getReference (1).compareIgnoreCase ("help") == 0)
     {
-        addLine ("Jo\u00ebl R. Langlois, 2015(C) to present", true);
+        addLine (item->processHelp(), false);
+        return Result::ok();
     }
-    else if (isCommand (command, "compile"))
-    {
-    }
-    else if (isCommand (command, "recompile"))
-    {
-    }
-    else
-    {
-        addLine (command.quoted() + " is an unknown command!", true);
-    }
+
+    return item->process (message, tokens);
 }
 
 //=============================================================================
 void ConsoleComponent::textEditorReturnKeyPressed (TextEditor& textEditor)
 {
-    parseCommand (textEditor.getText().trim());
+    String message;
+    parseCommand (message, textEditor.getText().trim());
+
+    if (message.isNotEmpty())
+        addLine (message, true);
 
     input.clear();
 }
@@ -79,7 +104,7 @@ void ConsoleComponent::textEditorReturnKeyPressed (TextEditor& textEditor)
 void ConsoleComponent::resized()
 {
     const int inputHeight = (int) input.getFont().getHeight() + 6;
-    input.setBounds (0, getHeight() - inputHeight, getWidth(), inputHeight);
 
+    input.setBounds (0, getHeight() - inputHeight, getWidth(), inputHeight);
     output.setBounds (0, 0, getWidth(), getHeight() - inputHeight);
 }

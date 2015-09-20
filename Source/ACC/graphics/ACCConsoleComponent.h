@@ -6,6 +6,7 @@ class ConsoleComponent : public Component,
 {
 public:
     ConsoleComponent();
+    ~ConsoleComponent();
 
     //=============================================================================
     void addLine (const String& line, bool prefixed = false);
@@ -13,7 +14,7 @@ public:
     void clear();
 
     //=============================================================================
-    void parseCommand (const String& command);
+    bool parseCommand (String& message, const String& command);
 
     //=============================================================================
     /** @internal */
@@ -24,6 +25,8 @@ public:
 private:
     //=============================================================================
     TextEditor input, output;
+
+    OwnedArray<ConsoleCommandItem> commandItems;
 
     //=============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ConsoleComponent)

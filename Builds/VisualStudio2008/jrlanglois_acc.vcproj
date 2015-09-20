@@ -138,6 +138,7 @@
             </FileConfiguration>
           </File>
           <File RelativePath="..\..\Source\ACC\core\ACCCodeTokeniser.h"/>
+          <File RelativePath="..\..\Source\ACC\core\ACCCommandItems.h"/>
           <File RelativePath="..\..\Source\ACC\core\Script.cpp">
             <FileConfiguration Name="Debug|Win32"
                                ExcludedFromBuild="true">

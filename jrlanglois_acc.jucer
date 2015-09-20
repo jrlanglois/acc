@@ -6,16 +6,18 @@
               companyWebsite="www.jrlanglois.com" companyName="Jo&#235;l R. Langlois">
   <MAINGROUP id="iYWOgq" name="jrlanglois_acc">
     <GROUP id="{FF191AC5-CBD3-92E4-D92A-2299B3465EB7}" name="ACC">
-      <GROUP id="{6960AC71-A9FA-722C-A93C-C51747AFE384}" name="core">
-        <FILE id="vqdNPR" name="ACCCodeTokeniser.cpp" compile="0" resource="0"
+      <GROUP id="{4409654A-5365-191A-C3AD-A66A11ADBE37}" name="core">
+        <FILE id="SUt9Jn" name="ACCCodeTokeniser.cpp" compile="0" resource="0"
               file="Source/ACC/core/ACCCodeTokeniser.cpp"/>
-        <FILE id="HeTs4Z" name="ACCCodeTokeniser.h" compile="0" resource="0"
+        <FILE id="czqSkg" name="ACCCodeTokeniser.h" compile="0" resource="0"
               file="Source/ACC/core/ACCCodeTokeniser.h"/>
-        <FILE id="StINX7" name="Script.cpp" compile="0" resource="0" file="Source/ACC/core/Script.cpp"/>
-        <FILE id="AjN6nT" name="Script.h" compile="0" resource="0" file="Source/ACC/core/Script.h"/>
-        <FILE id="dGA0w2" name="ScriptParser.cpp" compile="0" resource="0"
+        <FILE id="y9cJ7c" name="ACCCommandItems.h" compile="0" resource="0"
+              file="Source/ACC/core/ACCCommandItems.h"/>
+        <FILE id="QtNvCc" name="Script.cpp" compile="0" resource="0" file="Source/ACC/core/Script.cpp"/>
+        <FILE id="x6m1Fs" name="Script.h" compile="0" resource="0" file="Source/ACC/core/Script.h"/>
+        <FILE id="Hvkh73" name="ScriptParser.cpp" compile="0" resource="0"
               file="Source/ACC/core/ScriptParser.cpp"/>
-        <FILE id="bcy3zy" name="ScriptParser.h" compile="0" resource="0" file="Source/ACC/core/ScriptParser.h"/>
+        <FILE id="X2fw1i" name="ScriptParser.h" compile="0" resource="0" file="Source/ACC/core/ScriptParser.h"/>
       </GROUP>
       <GROUP id="{C0D89FA8-3525-0059-F152-8B36511CE051}" name="graphics">
         <FILE id="CREZD2" name="ACCApplicationCommands.h" compile="0" resource="0"

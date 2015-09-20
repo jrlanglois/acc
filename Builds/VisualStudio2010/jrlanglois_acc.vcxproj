@@ -1026,6 +1026,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\ACC\core\ACCCodeTokeniser.h"/>
+    <ClInclude Include="..\..\Source\ACC\core\ACCCommandItems.h"/>
     <ClInclude Include="..\..\Source\ACC\core\Script.h"/>
     <ClInclude Include="..\..\Source\ACC\core\ScriptParser.h"/>
     <ClInclude Include="..\..\Source\ACC\graphics\ACCApplicationCommands.h"/>

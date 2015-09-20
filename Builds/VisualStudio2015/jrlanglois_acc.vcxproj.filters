@@ -1206,6 +1206,9 @@
     <ClInclude Include="..\..\Source\ACC\core\ACCCodeTokeniser.h">
       <Filter>jrlanglois_acc\ACC\core</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\ACC\core\ACCCommandItems.h">
+      <Filter>jrlanglois_acc\ACC\core</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\ACC\core\Script.h">
       <Filter>jrlanglois_acc\ACC\core</Filter>
     </ClInclude>

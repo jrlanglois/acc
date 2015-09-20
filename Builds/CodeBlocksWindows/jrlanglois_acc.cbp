@@ -100,6 +100,10 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+    <Unit filename="../../Source/ACC/core/ACCCommandItems.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="../../Source/ACC/core/Script.cpp">
       <Option compile="0"/>
       <Option link="0"/>
