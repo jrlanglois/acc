@@ -43,6 +43,7 @@ But do ensure that they adhere to the following guidelines:
 * Search previous suggestions before making a new one, as yours may be a duplicate.
 * Make an individual pull request for _*each*_ suggestion.
 * Make sure your text editor is set to remove all trailing whitespace.
+* Absolutely _*no tabs*_. Use 4 spaces.
 * Code changes must follow JUCE's [coding standard](http://www.juce.com/learn/coding-standards).
 * Keep descriptions short, simple and understandable.
 * Start the description with a capital and end with a full stop/period.
