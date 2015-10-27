@@ -1,3 +1,10 @@
+# Build Status
+
+| [Travis-CI](https://travis-ci.org/) |
+| :-------: |
+| [![Build Status](https://travis-ci.org/jrlanglois/jrl_acc.svg?branch=master)](https://travis-ci.org/jrlanglois/jrl_acc) |
+
+
 # jrl_acc
 
 **jrl_acc** is an ACS script compiler, for use in tandem with [ZDoom](http://zdoom.org/News) and [Hexen](http://doom.wikia.com/wiki/Hexen).
