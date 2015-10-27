@@ -1,6 +1,8 @@
 ACCWindow::ACCWindow() :
     DocumentWindow (ProjectInfo::projectName, Colours::lightgrey, DocumentWindow::allButtons)
 {
+    setLookAndFeel (&lookAndFeel);
+
     setUsingNativeTitleBar (true);
     setResizable (true, false);
 
@@ -15,6 +17,7 @@ ACCWindow::ACCWindow() :
 ACCWindow::~ACCWindow()
 {
     setConstrainer (nullptr);
+    setLookAndFeel (nullptr);
 }
 
 void ACCWindow::closeButtonPressed()

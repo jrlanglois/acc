@@ -14,6 +14,7 @@ public:
 private:
     //==============================================================================
     ComponentBoundsConstrainer constrainer;
+    LookAndFeel_V3 lookAndFeel;
 
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ACCWindow)
