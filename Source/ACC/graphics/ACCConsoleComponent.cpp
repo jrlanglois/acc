@@ -1,9 +1,10 @@
 //=============================================================================
 ConsoleComponent::ConsoleComponent()
 {
-    commandItems.add (new ExitItem());
-    commandItems.add (new CopyrightItem());
-    commandItems.add (new VersionItem());
+    commandItems.add (new URLCommandItem());
+    commandItems.add (new ExitCommandItem());
+    commandItems.add (new CopyrightCommandItem());
+    commandItems.add (new VersionCommandItem());
     commandItems.add (new ClearCommandItem (input, output));
 
     input.setMultiLine (false, false);
@@ -35,6 +36,8 @@ void ConsoleComponent::addLine (const String& line, const bool prefixed)
 
 void ConsoleComponent::addLines (const StringArray& lines, const bool prefixed)
 {
+    for (int i = 0; i < lines.size(); ++i)
+        addLine (lines.strings.getReference (i), prefixed);
 }
 
 void ConsoleComponent::clear()
@@ -77,9 +80,13 @@ bool ConsoleComponent::parseCommand (String& message, const String& command)
 
     //Try processing 'help':
     if (tokens.size() == 2
-        && tokens.getReference (1).compareIgnoreCase ("help") == 0)
+        && tokens.getReference (1).removeCharacters ("-").compareIgnoreCase ("help") == 0)
     {
-        addLine (item->processHelp(), false);
+        StringArray lines;
+        lines.add ("Command: " + item->getCommandName());
+        lines.add (item->processHelp());
+
+        addLines (lines, false);
         return Result::ok();
     }
 
