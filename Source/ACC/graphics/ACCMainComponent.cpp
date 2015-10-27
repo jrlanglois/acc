@@ -167,6 +167,9 @@ Result ACCMainComponent::setFile (const File& file)
     if (result.failed())
         return result;
 
+    acc::ScriptParser parser;
+    parser.evaluate (file);
+
     codeEditorComponent->loadContent (file.loadFileAsString());
 
     return Result::ok();
