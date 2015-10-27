@@ -152,7 +152,7 @@ public:
 
     String processHelp() override
     {
-        return "'clear'" + newLine
+        return String ("'clear'") + newLine
                + "use '-i'\t for just the input" + newLine
                + "use '-o'\t for just the output";
     }
