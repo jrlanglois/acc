@@ -43,7 +43,40 @@ Result ScriptParser::evaluate (const String& accScriptCode, const Parameters& pa
     if (accScriptCode.isEmpty())
         return Result::fail (TRANS ("Either failed loading the file, or the file is empty!"));
 
-    jassertfalse;
+    CodeDocument codeDocument;
+    codeDocument.replaceAllContent (accScriptCode);
+
+    CodeDocument::Iterator sourceIterator (codeDocument);
+    CodeDocument::Iterator lastIterator (codeDocument);
+
+    const int lineLength = accScriptCode.length();
+    int startPosition = 0;
+
+    for (;;)
+    {
+        const ACCCodeTokeniser::TokenType tokenType = (ACCCodeTokeniser::TokenType) tokeniser.readNextToken (sourceIterator);
+        int tokenStart = lastIterator.getPosition();
+        int tokenEnd = sourceIterator.getPosition();
+
+        if (tokenEnd <= tokenStart)
+            break;
+
+        tokenEnd -= startPosition;
+
+        if (tokenEnd > 0)
+        {
+            tokenStart -= startPosition;
+            const int start = jmax (0, tokenStart);
+/*
+            addToken (newTokens, lineText.substring (start, tokenEnd),
+                      tokenEnd - start, tokenType);
+*/
+            if (tokenEnd >= lineLength)
+                break;
+        }
+
+        lastIterator = sourceIterator;
+    }
 
     return Result::ok();
 }

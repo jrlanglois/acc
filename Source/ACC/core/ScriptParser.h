@@ -26,7 +26,7 @@ public:
 
     static Result isACCSourceFile (const File& potentialACCSourceFile);
 
-    Result evaluate (const File& accFile, const Parameters& parameters);
+    Result evaluate (const File& accFile, const Parameters& parameters = Parameters());
 
 private:
     //==============================================================================
