@@ -1,0 +1,28 @@
+language: cpp
+os: linux
+
+before_install:
+    - sudo apt-get update -qq
+    - sudo apt-get install -qq
+        clang
+        g++
+        libfreetype6-dev
+        libx11-dev
+        libxinerama-dev
+        libxrandr-dev
+        libxcursor-dev
+        libxcomposite-dev
+        mesa-common-dev
+        libasound2-dev
+        freeglut3-dev
+        libcurl4-gnutls-dev+
+        libasound2-dev
+        libjack-dev
+
+compiler:
+    - clang
+    - gcc
+
+branches:
+    only:
+        - master
