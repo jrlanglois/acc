@@ -1,16 +1,15 @@
-# Build Status
-
-| [Travis-CI](https://travis-ci.org/) |
-| :-------: |
-| [![Build Status](https://travis-ci.org/jrlanglois/jrl_acc.svg?branch=master)](https://travis-ci.org/jrlanglois/jrl_acc) |
-
-
 # jrl_acc
 
 **jrl_acc** is an ACS script compiler, for use in tandem with [ZDoom](http://zdoom.org/News) and [Hexen](http://doom.wikia.com/wiki/Hexen).
 
 It is based on the original [acc](https://github.com/rheit/acc) repository,
 but is redesigned in C++ using [JUCE](https://github.com/julianstorer/JUCE) for a modern approach to its code.
+
+# Build Status
+
+| [Travis-CI](https://travis-ci.org/) |
+| :-------: |
+| [![Build Status](https://travis-ci.org/jrlanglois/jrl_acc.svg?branch=master)](https://travis-ci.org/jrlanglois/jrl_acc) |
 
 # Licensing
 http://opensource.org/licenses/lgpl-3.0.html
