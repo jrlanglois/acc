@@ -1,5 +1,4 @@
 language: cpp
-os: linux
 
 before_install:
     - sudo apt-get update -qq
@@ -25,10 +24,10 @@ compiler:
 
 env:
     global:
-	    - QUIET_ALREADY_VAR=1
+        - QUIET_ALREADY_VAR=1
 
 branches:
     only:
         - master
 
-script: cmake --build Builds/LinuxMakefile/Makefile
+script: cd Builds/LinuxMakefile && make
