@@ -4,7 +4,7 @@ before_install:
     - pwd
     - git clone --depth=1 --branch=master https://github.com/julianstorer/juce.git
     - sudo apt-get update -qq
-    - sudo apt-get install -qq
+    - sudo apt-get install -qq -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold"
         clang
         g++
         gcc
@@ -35,4 +35,7 @@ branches:
     only:
         - master
 
-script: cd Builds/LinuxMakefile && make
+script:
+    - set -x
+    - export DEBIAN_FRONTEND=noninteractive
+    - cd Builds/LinuxMakefile && make
