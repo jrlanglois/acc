@@ -1,6 +1,7 @@
 language: cpp
 
 before_install:
+    - git clone --depth=1 --branch=master https://github.com/julianstorer/juce.git
     - sudo apt-get update -qq
     - sudo apt-get install -qq
         clang
