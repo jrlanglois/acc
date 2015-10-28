@@ -23,6 +23,12 @@ compiler:
     - clang
     - gcc
 
+env:
+    global:
+	    - QUIET_ALREADY_VAR=1
+
 branches:
     only:
         - master
+
+script: cmake --build Builds/LinuxMakefile/Makefile
