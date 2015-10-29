@@ -3,7 +3,6 @@ language: cpp
 before_install:
     - pwd
     - git clone --depth=1 --branch=master https://github.com/julianstorer/juce.git
-    - sudo apt-get update -qq
     - sudo apt-get install -qq
         clang
         libfreetype6-dev
@@ -18,8 +17,9 @@ before_install:
         libcurl4-gnutls-dev+
         libasound2-dev
         libjack-dev
+    - sudo apt-get update --fix-missing
     - sudo apt-get update -qq
-    - sudo apt-get dist-upgrade
+    - sudo apt-get upgrade -qq
 
 compiler:
     - clang
