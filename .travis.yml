@@ -4,7 +4,6 @@ sudo: required
 dist: trusty
 
 before_install:
-    - pwd
     - export DEBIAN_FRONTEND=noninteractive
     - sudo apt-get update --fix-missing
     - sudo apt-get install -qq
@@ -23,7 +22,11 @@ before_install:
         libjack-dev
     - sudo apt-get update --fix-missing
     - sudo apt-get update -qq
+    - pwd
+    - cd ..
+    - pwd
     - git clone --depth=1 --branch=master https://github.com/julianstorer/juce.git
+    - pwd
 
 compiler:
     - clang
@@ -33,5 +36,5 @@ branches:
         - master
 
 script:
-    - cd Builds/LinuxMakefile
+    - cd jrl_acc/Builds/LinuxMakefile
     - make
