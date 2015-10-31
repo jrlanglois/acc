@@ -1,7 +1,10 @@
-language: cpp
-
 sudo: required
 dist: trusty
+
+language: cpp
+
+git:
+    depth: 1
 
 before_install:
     - export DEBIAN_FRONTEND=noninteractive
@@ -23,10 +26,12 @@ before_install:
     - sudo apt-get update --fix-missing
     - sudo apt-get update -qq
     - pwd
+    - ls -d */
     - cd ..
     - pwd
     - git clone --depth=1 --branch=master https://github.com/julianstorer/juce.git
     - pwd
+    - ls -d */
 
 compiler:
     - clang
@@ -36,5 +41,4 @@ branches:
         - master
 
 script:
-    - cd jrl_acc/Builds/LinuxMakefile
-    - make
+    - make -C jrl_acc/Builds/LinuxMakefile/
