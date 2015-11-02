@@ -29,7 +29,7 @@ before_install:
     - ls -d */
     - cd ..
     - pwd
-    - git clone --depth=1 --branch=master https://github.com/julianstorer/juce.git
+    - git clone --depth=1 --branch=master https://github.com/julianstorer/juce.git JUCE
     - pwd
     - ls -d */
 
