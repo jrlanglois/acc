@@ -2,7 +2,7 @@
 
 <JUCERPROJECT id="mfptWF" name="jrlanglois_acc" projectType="guiapp" version="1.0.0"
               bundleIdentifier="com.jrlanglois.acc" includeBinaryInAppConfig="0"
-              jucerVersion="3.2.0" companyEmail="joel.r.langlois@gmail.com"
+              jucerVersion="4.0.1" companyEmail="joel.r.langlois@gmail.com"
               companyWebsite="www.jrlanglois.com" companyName="Jo&#235;l R. Langlois">
   <MAINGROUP id="iYWOgq" name="jrlanglois_acc">
     <GROUP id="{FF191AC5-CBD3-92E4-D92A-2299B3465EB7}" name="ACC">
