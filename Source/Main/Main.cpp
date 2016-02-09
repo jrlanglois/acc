@@ -41,7 +41,7 @@ public:
     }
 
     //==============================================================================
-    void initialise (const String& commandLine) override
+    void initialise (const String&) override
     {
         window = new ACCWindow();
     }
@@ -67,7 +67,7 @@ public:
         return true;
     }
 
-    void anotherInstanceStarted (const String& commandLine) override
+    void anotherInstanceStarted (const String&) override
     {
     }
 
