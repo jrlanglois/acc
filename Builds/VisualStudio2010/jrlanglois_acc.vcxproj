@@ -1086,6 +1086,7 @@
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\containers\juce_ElementComparator.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\containers\juce_HashMap.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\containers\juce_LinkedListPointer.h"/>
+    <ClInclude Include="..\..\..\JUCE\modules\juce_core\containers\juce_ListenerList.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\containers\juce_NamedValueSet.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\containers\juce_OwnedArray.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\containers\juce_PropertySet.h"/>
@@ -1155,6 +1156,7 @@
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\misc\juce_WindowsRegistry.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\native\juce_android_JNIHelpers.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\native\juce_BasicNativeHeaders.h"/>
+    <ClInclude Include="..\..\..\JUCE\modules\juce_core\native\juce_mac_ClangBugWorkaround.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\native\juce_osx_ObjCHelpers.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\native\juce_posix_SharedCode.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\native\juce_win32_ComSmartPtr.h"/>
@@ -1190,7 +1192,6 @@
     <ClInclude Include="..\..\..\JUCE\modules\juce_events\broadcasters\juce_AsyncUpdater.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_events\broadcasters\juce_ChangeBroadcaster.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_events\broadcasters\juce_ChangeListener.h"/>
-    <ClInclude Include="..\..\..\JUCE\modules\juce_events\broadcasters\juce_ListenerList.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_events\interprocess\juce_ConnectedChildProcess.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_events\interprocess\juce_InterprocessConnection.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_events\interprocess\juce_InterprocessConnectionServer.h"/>

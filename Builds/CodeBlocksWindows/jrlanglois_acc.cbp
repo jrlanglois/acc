@@ -486,6 +486,10 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+    <Unit filename="../../../JUCE/modules/juce_core/containers/juce_ListenerList.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="../../../JUCE/modules/juce_core/containers/juce_NamedValueSet.cpp">
       <Option compile="0"/>
       <Option link="0"/>
@@ -986,6 +990,10 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+    <Unit filename="../../../JUCE/modules/juce_core/native/juce_mac_ClangBugWorkaround.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="../../../JUCE/modules/juce_core/native/juce_mac_Files.mm">
       <Option compile="0"/>
       <Option link="0"/>
@@ -1263,10 +1271,6 @@
       <Option link="0"/>
     </Unit>
     <Unit filename="../../../JUCE/modules/juce_events/broadcasters/juce_ChangeListener.h">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
-    <Unit filename="../../../JUCE/modules/juce_events/broadcasters/juce_ListenerList.h">
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>

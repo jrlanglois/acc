@@ -80,6 +80,7 @@
 		11C08E6EF2E558A27EB9EACA = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "juce_NotificationType.h"; path = "../../../JUCE/modules/juce_events/messages/juce_NotificationType.h"; sourceTree = "SOURCE_ROOT"; };
 		11F4B457D836E2CA345E0301 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_DynamicObject.cpp"; path = "../../../JUCE/modules/juce_core/containers/juce_DynamicObject.cpp"; sourceTree = "SOURCE_ROOT"; };
 		1207BB0EADBAD42AD7D6C0CF = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_Timer.cpp"; path = "../../../JUCE/modules/juce_events/timers/juce_Timer.cpp"; sourceTree = "SOURCE_ROOT"; };
+		120A643C9C59211E11811ED5 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "juce_ListenerList.h"; path = "../../../JUCE/modules/juce_core/containers/juce_ListenerList.h"; sourceTree = "SOURCE_ROOT"; };
 		12A944AEC2E92B74A85BC6C6 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_DirectoryContentsList.cpp"; path = "../../../JUCE/modules/juce_gui_basics/filebrowser/juce_DirectoryContentsList.cpp"; sourceTree = "SOURCE_ROOT"; };
 		12BEC33527A98FDDEEFD405F = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "juce_Drawable.h"; path = "../../../JUCE/modules/juce_gui_basics/drawables/juce_Drawable.h"; sourceTree = "SOURCE_ROOT"; };
 		135370E17DB99C7DAE8ED082 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_TemporaryFile.cpp"; path = "../../../JUCE/modules/juce_core/files/juce_TemporaryFile.cpp"; sourceTree = "SOURCE_ROOT"; };
@@ -424,7 +425,6 @@
 		8EA8C39E72EBB4BBC98022F1 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "juce_SelectedItemSet.h"; path = "../../../JUCE/modules/juce_gui_basics/mouse/juce_SelectedItemSet.h"; sourceTree = "SOURCE_ROOT"; };
 		8ED67CB5BD28D9FF911954AA = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "juce_ios_UIViewComponentPeer.mm"; path = "../../../JUCE/modules/juce_gui_basics/native/juce_ios_UIViewComponentPeer.mm"; sourceTree = "SOURCE_ROOT"; };
 		8F224C1D90F086B97C7ED21B = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = error.h; path = ../../Source/original/error.h; sourceTree = "SOURCE_ROOT"; };
-		8FB550441D67B85FEBB1B347 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "juce_ListenerList.h"; path = "../../../JUCE/modules/juce_events/broadcasters/juce_ListenerList.h"; sourceTree = "SOURCE_ROOT"; };
 		90A306469571709DF3F35121 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "juce_FileDragAndDropTarget.h"; path = "../../../JUCE/modules/juce_gui_basics/mouse/juce_FileDragAndDropTarget.h"; sourceTree = "SOURCE_ROOT"; };
 		90AED74ED0690187415EA897 = {isa = PBXFileReference; lastKnownFileType = file.acs; name = zcommon.acs; path = ../../Source/original/zcommon.acs; sourceTree = "SOURCE_ROOT"; };
 		916F8BD7C679097826D9BFA9 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_TextEditor.cpp"; path = "../../../JUCE/modules/juce_gui_basics/widgets/juce_TextEditor.cpp"; sourceTree = "SOURCE_ROOT"; };
@@ -524,6 +524,7 @@
 		B6704365F2347DDD6E6F07EE = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "juce_KeyMappingEditorComponent.h"; path = "../../../JUCE/modules/juce_gui_extra/misc/juce_KeyMappingEditorComponent.h"; sourceTree = "SOURCE_ROOT"; };
 		B6865DC9AE39C6F9B9DB0570 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "juce_mac_NSViewComponentPeer.mm"; path = "../../../JUCE/modules/juce_gui_basics/native/juce_mac_NSViewComponentPeer.mm"; sourceTree = "SOURCE_ROOT"; };
 		B6A379E9C7BC743AEA19D8F0 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_MouseInputSource.cpp"; path = "../../../JUCE/modules/juce_gui_basics/mouse/juce_MouseInputSource.cpp"; sourceTree = "SOURCE_ROOT"; };
+		B6B8399F07AC7A96F0EF31ED = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "juce_mac_ClangBugWorkaround.h"; path = "../../../JUCE/modules/juce_core/native/juce_mac_ClangBugWorkaround.h"; sourceTree = "SOURCE_ROOT"; };
 		B6F1F790C2D6FE2C9A965E68 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_MarkerList.cpp"; path = "../../../JUCE/modules/juce_gui_basics/positioning/juce_MarkerList.cpp"; sourceTree = "SOURCE_ROOT"; };
 		B6F98E91A9F0EA098BB9E7EA = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_RelativePointPath.cpp"; path = "../../../JUCE/modules/juce_gui_basics/positioning/juce_RelativePointPath.cpp"; sourceTree = "SOURCE_ROOT"; };
 		B758DB5F7706D4FEC5DD19FC = {isa = PBXFileReference; lastKnownFileType = file; name = "juce_module_info"; path = "../../../JUCE/modules/juce_graphics/juce_module_info"; sourceTree = "SOURCE_ROOT"; };
@@ -851,6 +852,7 @@
 					1AF6205F837E88499A7C688A,
 					FED806FF58A639ED165DFD26,
 					44ADF47CB64735F9482CE341,
+					120A643C9C59211E11811ED5,
 					BBC49424224AB1B548CF908B,
 					45DB5449D0086CC84489F573,
 					E3F451F3F54E9DB4E1197170,
@@ -989,6 +991,7 @@
 					FD25240FEA82B899247CB66E,
 					160918F1C98832654968F631,
 					AAFDD6DF8D8879247B550762,
+					B6B8399F07AC7A96F0EF31ED,
 					AD59AB47C011E19062DB0DA9,
 					AF198260E8D9E041CCE1B28D,
 					AF9DA90A16FFBFC705D6AFC6,
@@ -1091,8 +1094,7 @@
 					26EFECC7840C067CB0D2BF74,
 					70731AC0E6A44708CB1028B3,
 					7CDCBF2263997E5BCF5E1317,
-					2C067412397A5F1A5A441543,
-					8FB550441D67B85FEBB1B347, ); name = broadcasters; sourceTree = "<group>"; };
+					2C067412397A5F1A5A441543, ); name = broadcasters; sourceTree = "<group>"; };
 		F1036518570E682845D18838 = {isa = PBXGroup; children = (
 					F30893A8D5C62B2B0721F381,
 					D07B733D1C717ED8AC570288,
@@ -1623,6 +1625,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jrlanglois.acc;
 				SDKROOT_ppc = macosx10.5; }; name = Debug; };
 		8D589C5A2A92638F75FB12CD = {isa = XCBuildConfiguration; buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
@@ -1644,10 +1647,12 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jrlanglois.acc;
 				SDKROOT_ppc = macosx10.5; }; name = Release; };
 		15A1DB9E9E7FCA54D4575ED5 = {isa = XCBuildConfiguration; buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf";
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_MODEL_TUNING = G5;
