@@ -81,7 +81,7 @@ public:
             return false;
         }
 
-        message = CharPointer_UTF8 ("\xc2\xa9Jo\xc3\xabl R. Langlois") + ", " + String (Time::getCurrentTime().getYear());
+        message = String (CharPointer_UTF8 ("\xc2\xa9Jo\xc3\xabl R. Langlois")) + ", " + String (Time::getCurrentTime().getYear());
         return true;
     }
 
