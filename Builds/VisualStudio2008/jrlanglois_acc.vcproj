@@ -332,6 +332,10 @@
         <File RelativePath="..\..\Source\original\zspecial.acs"/>
         <File RelativePath="..\..\Source\original\zwvars.acs"/>
       </Filter>
+      <Filter Name="UnitTests">
+        <File RelativePath="..\..\Source\UnitTests\AllTests.acs"/>
+        <File RelativePath="..\..\Source\UnitTests\BasicTest.acs"/>
+      </Filter>
     </Filter>
     <Filter Name="Juce Modules">
       <Filter Name="juce_core">
@@ -479,6 +483,7 @@
           </File>
           <File RelativePath="..\..\..\JUCE\modules\juce_core\maths\juce_Random.h"/>
           <File RelativePath="..\..\..\JUCE\modules\juce_core\maths\juce_Range.h"/>
+          <File RelativePath="..\..\..\JUCE\modules\juce_core\maths\juce_StatisticsAccumulator.h"/>
         </Filter>
         <Filter Name="memory">
           <File RelativePath="..\..\..\JUCE\modules\juce_core\memory\juce_Atomic.h"/>

@@ -74,6 +74,10 @@
       <FILE id="Rtnfxu" name="zspecial.acs" compile="0" resource="0" file="Source/original/zspecial.acs"/>
       <FILE id="s8MqEA" name="zwvars.acs" compile="0" resource="0" file="Source/original/zwvars.acs"/>
     </GROUP>
+    <GROUP id="{40B32269-4694-53D2-2965-D2DF60C1CD6E}" name="UnitTests">
+      <FILE id="YLqII5" name="AllTests.acs" compile="0" resource="0" file="Source/UnitTests/AllTests.acs"/>
+      <FILE id="J58mBO" name="BasicTest.acs" compile="0" resource="0" file="Source/UnitTests/BasicTest.acs"/>
+    </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
     <XCODE_MAC targetFolder="Builds/MacOSX">

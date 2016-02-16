@@ -20,6 +20,9 @@
     <Filter Include="jrlanglois_acc\original">
       <UniqueIdentifier>{73D0EE9A-3AE8-B130-B728-0140B954C3B1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="jrlanglois_acc\UnitTests">
+      <UniqueIdentifier>{D84D90D2-DBD9-1BCD-6E3C-7B9DD8D4B026}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Juce Modules">
       <UniqueIdentifier>{422C46B7-0467-2DB0-BF3C-16DFCAFD69AC}</UniqueIdentifier>
     </Filter>
@@ -1326,6 +1329,9 @@
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\maths\juce_Range.h">
       <Filter>Juce Modules\juce_core\maths</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\JUCE\modules\juce_core\maths\juce_StatisticsAccumulator.h">
+      <Filter>Juce Modules\juce_core\maths</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\memory\juce_Atomic.h">
       <Filter>Juce Modules\juce_core\memory</Filter>
     </ClInclude>
@@ -2317,6 +2323,12 @@
     </None>
     <None Include="..\..\Source\original\zwvars.acs">
       <Filter>jrlanglois_acc\original</Filter>
+    </None>
+    <None Include="..\..\Source\UnitTests\AllTests.acs">
+      <Filter>jrlanglois_acc\UnitTests</Filter>
+    </None>
+    <None Include="..\..\Source\UnitTests\BasicTest.acs">
+      <Filter>jrlanglois_acc\UnitTests</Filter>
     </None>
     <None Include="..\..\..\JUCE\modules\juce_core\juce_module_info">
       <Filter>Juce Modules\juce_core</Filter>

@@ -1072,6 +1072,7 @@
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\maths\juce_NormalisableRange.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\maths\juce_Random.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\maths\juce_Range.h"/>
+    <ClInclude Include="..\..\..\JUCE\modules\juce_core\maths\juce_StatisticsAccumulator.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\memory\juce_Atomic.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\memory\juce_ByteOrder.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\memory\juce_ContainerDeletePolicy.h"/>
@@ -1404,6 +1405,8 @@
     <None Include="..\..\Source\original\zdefs.acs"/>
     <None Include="..\..\Source\original\zspecial.acs"/>
     <None Include="..\..\Source\original\zwvars.acs"/>
+    <None Include="..\..\Source\UnitTests\AllTests.acs"/>
+    <None Include="..\..\Source\UnitTests\BasicTest.acs"/>
     <None Include="..\..\..\JUCE\modules\juce_core\juce_module_info"/>
     <None Include="..\..\..\JUCE\modules\juce_cryptography\juce_module_info"/>
     <None Include="..\..\..\JUCE\modules\juce_data_structures\juce_module_info"/>
