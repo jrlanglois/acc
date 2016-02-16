@@ -408,14 +408,16 @@ static void CountScript(int type)
 static void Outside(void)
 {
 	boolean done;
+	int outertokencount;
 
 	done = NO;
+	outertokencount = 0;
 	while(done == NO)
 	{
+		outertokencount++;
 		switch(tk_Token)
 		{
 		case TK_EOF:
-
 			done = YES;
 			break;
 		case TK_SCRIPT:
@@ -494,8 +496,13 @@ static void Outside(void)
 				break;
 			case TK_IMPORT:
 				OuterImport();
+				outertokencount = 0;
 				break;
 			case TK_LIBRARY:
+				if (outertokencount != 1)
+				{
+					ERR_Error(ERR_LIBRARY_NOT_FIRST, YES);
+				}
 				TK_NextTokenMustBe(TK_STRING, ERR_STRING_LIT_NOT_FOUND);
 				if(ImportMode == IMPORT_None)
 				{
@@ -512,6 +519,11 @@ static void Outside(void)
 					ExporterFlagged = YES;
 				}
 				TK_NextToken();
+				break;
+			case TK_REGION: // [mxd]
+			case TK_ENDREGION:
+				outertokencount--; // #region markers should not count as "real" tokens
+				TK_SkipLine();
 				break;
 			default:
 				ERR_Error(ERR_INVALID_DIRECTIVE, YES);
@@ -1624,7 +1636,21 @@ static void LeadingLineSpecial(boolean executewait)
 	}
 	TK_TokenMustBe(TK_RPAREN, ERR_MISSING_RPAREN);
 	TK_NextTokenMustBe(TK_SEMICOLON, ERR_MISSING_SEMICOLON);
-	if(direct == NO)
+	if (specialValue > 255)
+	{
+		for(; argCount < 5; ++argCount)
+		{
+			PC_AppendPushVal(0);
+		}
+		PC_AppendCmd(PCD_LSPEC5EX);
+		PC_AppendInt(specialValue);
+		if(executewait)
+		{
+			PC_AppendCmd(PCD_SCRIPTWAITDIRECT);
+			PC_AppendInt(argSave[0]);
+		}
+	}
+	else if(direct == NO)
 	{
 		PC_AppendCmd(PCD_LSPEC1+(argCount-1));
 		if(pc_NoShrink)
@@ -2103,6 +2129,10 @@ static void ProcessScriptFunc(symbolNode_t *sym, boolean discardReturn)
 	int argCount;
 
 	MS_Message(MSG_DEBUG, "---- ProcessScriptFunc ----\n");
+	if(sym->info.scriptFunc.predefined == YES && discardReturn == NO)
+	{
+		sym->info.scriptFunc.hasReturnValue = YES;
+	}
 	argCount = sym->info.scriptFunc.argCount;
 	TK_NextTokenMustBe(TK_LPAREN, ERR_MISSING_LPAREN);
 	i = 0;
@@ -3498,8 +3528,8 @@ static void ExprLineSpecial(void)
 			}
 			TK_TokenMustBe(TK_RPAREN, ERR_MISSING_RPAREN);
 			TK_NextToken();
-			PC_AppendCmd(PCD_LSPEC5RESULT);
-			if(pc_NoShrink)
+			PC_AppendCmd(specialValue <= 255? PCD_LSPEC5RESULT : PCD_LSPEC5EXRESULT);
+			if(pc_NoShrink || specialValue > 255)
 			{
 				PC_AppendInt(specialValue);
 			}
@@ -3694,7 +3724,8 @@ static void ExprFactor(void)
 				ProcessInternFunc(sym);
 				break;
 			case SY_SCRIPTFUNC:
-				if(sym->info.scriptFunc.hasReturnValue == NO)
+				if(sym->info.scriptFunc.predefined == NO
+					&& sym->info.scriptFunc.hasReturnValue == NO)
 				{
 					ERR_Error(ERR_EXPR_FUNC_NO_RET_VAL, YES);
 				}
@@ -4614,7 +4645,7 @@ void SkipBraceBlock(int depth)
 		{
 			if(tk_Token == TK_EOF)
 			{
-				ERR_Exit(ERR_EOF, NO);
+				ERR_Exit(ERR_EOF, YES, NULL);
 			}
 			TK_NextToken();
 		}
@@ -4626,7 +4657,7 @@ void SkipBraceBlock(int depth)
 		TK_NextToken();
 		if(tk_Token == TK_EOF)
 		{
-			ERR_Exit(ERR_EOF, NO);
+			ERR_Exit(ERR_EOF, YES, NULL);
 		}
 		else if (tk_Token == TK_LBRACE)
 		{

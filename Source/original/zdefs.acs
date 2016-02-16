@@ -958,6 +958,13 @@
 #define SECF_NOFALLINGDAMAGE 2
 #define SECF_FLOORDROP 4
 #define SECF_NORESPAWN 8
+#define SECF_FRICTION 16
+#define SECF_PUSH 32
+#define SECF_SILENTMOVE 64
+#define SECF_DMGTERRAINFX	128
+#define SECF_DMGENDGODMODE 256
+#define SECF_DMGENDLEVEL 512
+#define SECF_DMGHAZARD 1024
 
 #define BLOCKF_CREATURES 1
 #define BLOCKF_MONSTERS 2
@@ -969,6 +976,7 @@
 #define BLOCKF_USE 128
 #define BLOCKF_SIGHT 256
 #define BLOCKF_HITSCAN 512
+#define BLOCKF_SOUND 1024
 
 #define FOGP_DENSITY 0
 #define FOGP_OUTSIDEDENSITY 1
@@ -983,6 +991,14 @@
 
 #define FHF_NORANDOMPUFFZ	1
 #define FHF_NOIMPACTDECAL	2
+
+// PickActor flags
+
+#define	PICKAF_FORCETID			1
+#define	PICKAF_RETURNTID		2
+
+// magic value to set the ice translation through ACS
+#define TRANSLATION_ICE 0x100007
 
 // Actor flags
 #define MF_SPECIAL          0x00000001

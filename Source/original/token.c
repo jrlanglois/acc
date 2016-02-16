@@ -15,7 +15,7 @@
 #ifdef __NeXT__
 #include <libc.h>
 #else
-#ifndef unix
+#if !defined(unix) && !defined(__APPLE__)
 #include <io.h>
 #endif
 #include <limits.h>
@@ -197,6 +197,8 @@ static struct keyword_s
 	{ "static", TK_STATIC },
 	{ "strparam", TK_STRPARAM_EVAL }, // [FDARI]
 	{ "strcpy", TK_STRCPY }, // [FDARI]
+	{ "region", TK_REGION }, // [mxd]
+	{ "endregion", TK_ENDREGION }, // [mxd]
 };
 
 #define NUM_KEYWORDS (sizeof(Keywords)/sizeof(Keywords[0]))
@@ -634,7 +636,7 @@ tokenType_t TK_NextToken(void)
 				ImportMode = prevMode;
 				if(!ExporterFlagged)
 				{
-					ERR_Exit(ERR_EXPORTER_NOT_FLAGGED, NO);
+					ERR_Exit(ERR_EXPORTER_NOT_FLAGGED, YES, NULL);
 				}
 				SY_ClearShared();
 			}
